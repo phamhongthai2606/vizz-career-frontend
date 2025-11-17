@@ -1,73 +1,75 @@
 "use client";
 
 import React from "react";
-import TextInput from "@/components/common/form/TextInput";
-import { useLogin } from "@/components/pages/login/useLogin";
+import { ChevronRight, Check } from "lucide-react";
+import Image from "next/image";
+import "@/components/pages/login/styles/login.css";
 
-export default function LoginForm() {
-  const { register, handleSubmit, errors, onSubmit, isSubmitting } = useLogin();
-
-  type TypeFormData = {
-    email: string;
-    password: string;
-  };
-
-  const formItems: {
-    form: keyof TypeFormData;
-    label: string;
-    type: "text" | "password";
-    isRequired: boolean;
-    placeholder?: string;
-  }[] = [
-    {
-      form: "email",
-      label: "Email",
-      type: "text",
-      isRequired: true,
-      placeholder: "Nhập email",
-    },
-    {
-      form: "password",
-      label: "Mật khẩu",
-      type: "password",
-      isRequired: true,
-      placeholder: "Nhập mật khẩu",
-    },
-  ];
-
+export default function LoginPage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50">
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="w-full max-w-sm rounded-xl bg-white p-8 shadow-md"
-      >
-        <h1 className="mb-6 text-center text-2xl font-semibold text-gray-800">
-          Đăng nhập
-        </h1>
-
-        <div className="space-y-4">
-          {formItems.map((item) => (
-            <TextInput
-              key={item.form}
-              id={item.form}
-              label={item.label}
-              type={item.type}
-              required={item.isRequired}
-              placeholder={item.placeholder}
-              error={errors[item.form]?.message}
-              {...register(item.form)}
-            />
-          ))}
+    <div className="login-container bg-[#f9fafb]">
+      <header className="header">
+        <div className="logo">
+          <img src="/logo.png" alt="Coco Logo" />
         </div>
+      </header>
 
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="mt-6 w-full rounded-lg bg-blue-600 py-2 font-medium text-white hover:bg-blue-700 disabled:opacity-60"
-        >
-          {isSubmitting ? "Đang xử lý..." : "Đăng nhập"}
-        </button>
-      </form>
+      <div className="comment-note">
+        <div className="rounded-lg border-2 border-[#4bccbe] bg-[#ffffff] p-4 shadow-sm">
+          <div className="flex items-start justify-between gap-4">
+            <div className="flex-1">
+              <div className="mb-2 inline-block rounded bg-[#4bccbe] px-2 py-1 text-xs font-medium text-[#ffffff]">
+                台様
+              </div>
+              <p className="mb-3 text-sm text-[#2d2d2d] font-bold">
+                ラインでログインできる？
+              </p>
+              <div className="flex items-center gap-2">
+                <div className="relative h-6 w-6">
+                  <Image
+                    src="/diverse-user-avatars.png"
+                    alt="Heri, Maya"
+                    width={24}
+                    height={24}
+                    className="rounded-full"
+                  />
+                </div>
+                <span className="text-xs text-[#2d2d2d] font-bold">
+                  Heri, Maya
+                </span>
+                <span className="text-xs text-[#99a9b0]">
+                  2025-11-25 21:17:00
+                </span>
+              </div>
+            </div>
+            <div className="flex-shrink-0">
+              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#59bb0c]">
+                <Check className="h-4 w-4 text-[#ffffff]" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="login-form">
+        <div className="login-block">
+          <div className="text-label">ログイン</div>
+          <div className="ui-panel">
+            <div className="w7-text">coco career</div>
+            <button className="line-btn">
+              <img src="/line.png" alt="Line Logo" className="line-logo" />
+              <div className="text-white-14">LINEで登録・ログイン</div>
+            </button>
+          </div>
+
+          <div className="primary-base-group">
+            <a href="" className="flex items-center gap-1 text-sm text-[#2d2d2d] underline">
+              <div className="text-w5-14">企業担当者はこちら</div>
+              <ChevronRight className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
