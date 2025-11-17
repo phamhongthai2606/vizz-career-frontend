@@ -1,14 +1,13 @@
 .login-container {
-    width: 1280px;
-    height: 791px;
+    width: 100vw;
+    height: 100vh;
     background: #f9fafb;
 }
 
 .header {
-    width: 1280px;
+    width: 100vw;
     height: 89px;
     padding: 24px 32px;
-    gap: 16px;
 }
 
 .logo {
@@ -20,7 +19,7 @@
     position: absolute;
     left: 866px;
     top: 23px;
-    width: 380px;
+    width: 485px;
     height: 109px;
 }
 
