@@ -6,8 +6,20 @@ import {
   profileRegistrationSchema,
   type ProfileRegistrationSchema,
 } from "@/lib/ProfileRegistrationSchema";
+import { useRouter } from "next/navigation";
 
 export const useProfileRegistration = () => {
+  const requiredFields = [
+    "last_name",
+    "first_name",
+    "last_name_kana",
+    "first_name_kana",
+    "school_name",
+    "department_name",
+    "subject_system",
+    "grade",
+  ] as const;
+
   const {
     register,
     handleSubmit,
@@ -28,14 +40,18 @@ export const useProfileRegistration = () => {
     },
   });
 
+  const watched = watch(requiredFields);
+
+  const isFormValid = watched.every(
+    (v) => v !== "" && v !== undefined && v !== null
+  );
+
+  const router = useRouter();
+
   const onSubmit = (data: ProfileRegistrationSchema) => {
     console.log("Profile Registration data:", data);
+    router.push("/additional-profile");
   };
-
-  const watchAllFields = watch();
-  const isFormValid = Object.values(watchAllFields).every(
-    (v) => v !== "" && v !== undefined && v !== null,
-  );
 
   return {
     register,
@@ -43,7 +59,7 @@ export const useProfileRegistration = () => {
     errors,
     isSubmitting,
     isFormValid,
-    watchAllFields,
+    watchAllFields: watch(),
     onSubmit,
   };
 };

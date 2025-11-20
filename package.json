@@ -18,6 +18,7 @@
     "axios": "^1.6.8",
     "date-fns": "^3.6.0",
     "dotenv": "^16.4.5",
+    "framer-motion": "^12.23.24",
     "next": "16.0.2",
     "next-nprogress-bar": "^2.3.13",
     "react": "^19.0.0",

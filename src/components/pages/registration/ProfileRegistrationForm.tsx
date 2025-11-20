@@ -3,6 +3,8 @@
 import TextInput from "@/components/common/form/TextInput";
 import Dropdown from "@/components/common/form/Dropdown";
 import { useProfileRegistration } from "@/components/pages/registration/useProfileRegistration";
+import { useRouter } from "next/navigation";
+import AnimatedPage from "@/components/common/AnimatedPage";
 
 export default function ProfileRegistrationForm() {
   const {
@@ -113,62 +115,64 @@ export default function ProfileRegistrationForm() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center border border-gray-300 bg-gray-50">
-      <h1 className="mb-6 text-center text-base font-semibold text-black">
-        プロフィール登録
-      </h1>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="w-full max-w-md rounded-xl border border-gray-300 bg-white px-6 py-12 shadow-md"
-      >
-        <h2 className="mb-6 text-left text-sm font-semibold text-black">
-          基本情報
-        </h2>
-
-        <div className="space-y-4">
-          {formGroups.map((group, groupIdx) => (
-            <div
-              key={groupIdx}
-              className={`grid ${getGridClass(groupIdx)} gap-4`}
-            >
-              {group.map((item) =>
-                item.type === "dropdown" && item.options ? (
-                  <Dropdown
-                    key={item.form}
-                    id={item.form}
-                    label={item.label}
-                    value={watchAllFields[item.form] || ""}
-                    required={item.isRequired}
-                    options={item.options}
-                    placeholder={item.placeholder}
-                    error={errors[item.form]?.message}
-                    {...register(item.form)}
-                  />
-                ) : (
-                  <TextInput
-                    key={item.form}
-                    id={item.form}
-                    label={item.label}
-                    type={item.type}
-                    required={item.isRequired}
-                    placeholder={item.placeholder}
-                    error={errors[item.form]?.message}
-                    {...register(item.form)}
-                  />
-                ),
-              )}
-            </div>
-          ))}
-        </div>
-
-        <button
-          type="submit"
-          disabled={!isFormValid || isSubmitting}
-          className="mx-auto mt-6 block w-full max-w-[240px] rounded-lg bg-red-600 py-2 font-medium text-white hover:bg-red-700 disabled:cursor-not-allowed disabled:bg-[#ffe5e5] disabled:text-red-300"
+    <AnimatedPage>
+      <div className="flex min-h-screen flex-col items-center justify-center border border-gray-300 bg-gray-50">
+        <h1 className="mb-6 text-center text-base font-semibold text-black">
+          プロフィール登録
+        </h1>
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="w-full max-w-md rounded-xl border border-gray-300 bg-white px-6 py-12 shadow-md"
         >
-          次へ
-        </button>
-      </form>
-    </div>
+          <h2 className="mb-6 text-left text-sm font-semibold text-black">
+            基本情報
+          </h2>
+
+          <div className="space-y-4">
+            {formGroups.map((group, groupIdx) => (
+              <div
+                key={groupIdx}
+                className={`grid ${getGridClass(groupIdx)} gap-4`}
+              >
+                {group.map((item) =>
+                  item.type === "dropdown" && item.options ? (
+                    <Dropdown
+                      key={item.form}
+                      id={item.form}
+                      label={item.label}
+                      value={watchAllFields[item.form] || ""}
+                      required={item.isRequired}
+                      options={item.options}
+                      placeholder={item.placeholder}
+                      error={errors[item.form]?.message}
+                      {...register(item.form)}
+                    />
+                  ) : (
+                    <TextInput
+                      key={item.form}
+                      id={item.form}
+                      label={item.label}
+                      type={item.type}
+                      required={item.isRequired}
+                      placeholder={item.placeholder}
+                      error={errors[item.form]?.message}
+                      {...register(item.form)}
+                    />
+                  ),
+                )}
+              </div>
+            ))}
+          </div>
+
+          <button
+            type="submit"
+            disabled={!isFormValid || isSubmitting}
+            className="mx-auto mt-6 block w-full max-w-[240px] rounded-lg bg-red-600 py-2 font-medium text-white hover:bg-red-700 disabled:cursor-not-allowed disabled:bg-[#ffe5e5] disabled:text-red-300"
+          >
+            次へ
+          </button>
+        </form>
+      </div>
+    </AnimatedPage>
   );
 }
