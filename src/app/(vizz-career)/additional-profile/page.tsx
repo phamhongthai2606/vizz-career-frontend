@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import AnimatedPage from "@/components/common/AnimatedPage";
 import TextInput from "@/components/common/form/TextInput";
 import Dropdown from "@/components/common/form/Dropdown";
+import { useRouter } from "next/navigation";
 
 import {
   additionalProfileSchema,
@@ -22,6 +23,7 @@ export default function AdditionalProfilePage() {
     mode: "onChange",
   });
 
+  const router = useRouter();
   const watched = watch(["phone_number", "gender"]);
   const isFormValid = watched.every((v) => !!v);
 
@@ -72,8 +74,8 @@ export default function AdditionalProfilePage() {
           <div className="mt-8 flex items-center justify-between gap-4">
             <button
               type="button"
+              onClick={() => router.push("/start")}
               className="w-1/2 rounded-full border border-gray-400 bg-white py-2 text-sm font-medium text-black"
-              onClick={() => alert("スキップしました")}
             >
               スキップする
             </button>
