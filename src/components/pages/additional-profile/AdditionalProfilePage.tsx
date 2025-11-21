@@ -29,7 +29,9 @@ export default function AdditionalProfilePage() {
 
   const onSubmit = (data: AdditionalProfileSchema) => {
     console.log("Additional profile data:", data);
-    alert("保存されました！");
+
+    // chuyển sang màn hình start
+    router.push("/start");
   };
 
   return (
