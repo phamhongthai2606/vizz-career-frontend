@@ -6,8 +6,7 @@ import AnimatedPage from "@/components/common/AnimatedPage";
 export default function StartPage() {
   return (
     <AnimatedPage>
-      <div className="min-h-screen bg-gray-50 flex flex-col items-center py-12 px-4">
-
+      <div className="flex min-h-screen flex-col items-center bg-gray-50 px-4 py-32">
         {/* TITLE */}
         <h1 className="text-2xl font-bold text-indigo-800 mb-3 text-center">
           さあ、始めましょう！

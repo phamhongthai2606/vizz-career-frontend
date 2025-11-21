@@ -3,7 +3,6 @@
 import TextInput from "@/components/common/form/TextInput";
 import Dropdown from "@/components/common/form/Dropdown";
 import { useProfileRegistration } from "@/components/pages/registration/useProfileRegistration";
-import { useRouter } from "next/navigation";
 import AnimatedPage from "@/components/common/AnimatedPage";
 
 export default function ProfileRegistrationForm() {
@@ -116,7 +115,7 @@ export default function ProfileRegistrationForm() {
 
   return (
     <AnimatedPage>
-      <div className="flex min-h-screen flex-col items-center justify-center border border-gray-300 bg-gray-50">
+      <div className="flex min-h-screen flex-col items-center justify-start bg-gray-50 px-4 pt-32">
         <h1 className="mb-6 text-center text-base font-semibold text-black">
           プロフィール登録
         </h1>
