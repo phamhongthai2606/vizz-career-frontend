@@ -24,10 +24,6 @@ export default function LoginPage() {
                 coco career
               </h2>
             </div>
-            {/*<button className="bg-[#06C755] hover:bg-[#05b34c] text-white font-medium py-3 px-6 rounded-md flex items-center justify-center gap-2 transition-colors h-[36px] w-[240px] text-sm mx-auto">*/}
-            {/*  <img src="/line.png" alt="Line Logo"/>*/}
-            {/*  LINEで登録・ログイン*/}
-            {/*</button>*/}
             <button
               className="bg-[#06C755] text-white h-[36px] w-[240px]
              rounded-full flex items-center justify-center gap-2
