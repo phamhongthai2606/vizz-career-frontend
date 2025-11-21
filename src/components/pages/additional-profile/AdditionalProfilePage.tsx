@@ -34,7 +34,7 @@ export default function AdditionalProfilePage() {
 
   return (
     <AnimatedPage>
-      <div className="flex min-h-screen flex-col items-center justify-start bg-gray-50 px-4 pt-12">
+      <div className="flex min-h-screen flex-col items-center justify-start bg-gray-50 px-4 pt-32">
         <h1 className="mb-2 text-center text-base font-semibold text-black">
           プロフィールが登録できました！
         </h1>
