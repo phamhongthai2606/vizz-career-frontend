@@ -5,6 +5,28 @@ import Dropdown from "@/components/common/form/Dropdown";
 import { useProfileRegistration } from "@/components/pages/registration/useProfileRegistration";
 import AnimatedPage from "@/components/common/AnimatedPage";
 
+// get grade options based on current date
+const getGradeOptions = () => {
+  const now = new Date();
+  const currentYear = now.getFullYear();
+  const currentMonth = now.getMonth() + 1;
+  
+  // If currentMonth (1-3), then currentYear = currentYear
+  // If currentMonth in (4-12) then currentYear  = currentYear + 1
+  const startYear = currentMonth >= 1 && currentMonth <= 3 
+    ? currentYear 
+    : currentYear + 1;
+  
+  const options = [];
+  for (let i = 0; i < 5; i++) {
+    const year = startYear + i;
+    const shortYear = year % 100;
+    options.push(`${shortYear}卒`);
+  }
+  
+  return options;
+};
+
 export default function ProfileRegistrationForm() {
   const {
     register,
@@ -91,7 +113,7 @@ export default function ProfileRegistrationForm() {
       type: "dropdown",
       isRequired: true,
       placeholder: "選択してください",
-      options: ["1年生", "2年生", "3年生", "4年生", "5年生以上"],
+      options: getGradeOptions(),
     },
   ];
 
