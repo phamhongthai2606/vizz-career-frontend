@@ -3,7 +3,6 @@
 import Link from "next/link";
 import TextInput from "@/components/common/form/TextInput";
 import AnimatedPage from "@/components/common/AnimatedPage";
-import Header from "@/components/common/Header";
 import { useLogin } from "@/components/pages/coco-login/useCocoLogin";
 
 export default function CocoLoginForm() {
@@ -12,9 +11,6 @@ export default function CocoLoginForm() {
   return (
     <AnimatedPage>
       <div className="min-h-screen bg-[#F9FAFB]">
-        {/* Header */}
-        <Header />
-
         {/* Main Content */}
         <div className="flex items-center justify-center px-4 pt-[108px]">
           <div className="w-full max-w-[480px]">
