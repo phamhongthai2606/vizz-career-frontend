@@ -10,16 +10,16 @@ export default function CocoLoginPage() {
 
   return (
     <AnimatedPage>
-      <div className="flex min-h-screen flex-col items-center justify-start bg-[#F9FAFB] px-4 py-12 sm:py-16">
+      <div className="flex min-h-screen flex-col items-center justify-start bg-gray-50 px-4 py-12 sm:py-16">
         {/* Title */}
-        <h1 className="mb-6 text-center text-base font-bold tracking-wider text-[#2D2D2D]">
+        <h1 className="mb-6 text-center text-base font-bold tracking-wider text-coco-black">
           ログイン
         </h1>
 
         {/* Login Form Container */}
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="w-full max-w-[480px] rounded-lg border border-[#B9B9B9] bg-white px-6 py-12 sm:px-8 shadow-sm"
+          className="w-full max-w-[480px] rounded-lg border border-coco-gray bg-white px-6 py-12 sm:px-8 shadow-sm"
         >
           {/* Form Fields */}
           <div className="space-y-6">
@@ -48,7 +48,7 @@ export default function CocoLoginPage() {
           <div className="mt-6 mb-8">
             <Link
               href="/forgot-password"
-              className="text-sm font-medium tracking-wider text-[#111958] underline hover:text-[#0D1240] transition-colors"
+              className="text-sm font-medium tracking-wider text-coco-primary underline hover:opacity-80 transition-opacity"
             >
               パスワードを忘れた方
             </Link>
@@ -58,7 +58,7 @@ export default function CocoLoginPage() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="mx-auto block w-full max-w-[240px] rounded-full bg-[#FF5252] py-2 text-center text-sm font-normal tracking-wider text-white transition-colors hover:bg-[#E64848] disabled:cursor-not-allowed disabled:bg-[#FFB3B3] disabled:text-white"
+            className="mx-auto block w-full max-w-[240px] rounded-full bg-coco-point py-2 text-center text-sm font-normal tracking-wider text-white transition-colors hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
           >
             ログイン
           </button>
