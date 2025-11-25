@@ -29,7 +29,6 @@ export default function CocoLoginPage() {
               label="メールアドレス"
               type="email"
               placeholder="blueai@mail.com"
-              required
               error={errors.email?.message}
               {...register("email")}
             />
@@ -40,7 +39,6 @@ export default function CocoLoginPage() {
               label="パスワード"
               type="password"
               placeholder="************"
-              required
               error={errors.password?.message}
               {...register("password")}
             />
