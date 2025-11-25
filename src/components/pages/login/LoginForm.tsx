@@ -1,47 +1,35 @@
 "use client";
 
 import Link from "next/link";
-import Header from '../../Header';
 
 export default function LoginPage() {
   return (
     <div className="min-h-screen w-full bg-[#f9fafb]">
-      <Header />
-
-      <div className="fixed top-4 right-4 md:top-6 md:right-8 max-w-[340px] md:max-w-sm z-50">
-        <img src="/comment.png" alt=""/>
+      <div className="fixed top-4 right-4 z-50 max-w-[340px] md:top-6 md:right-8 md:max-w-sm">
+        <img src="/comment.png" alt="" />
       </div>
 
-      <div className="flex-1 flex items-center justify-center px-4 py-12 pl-[170px]">
-      <div className="w-full max-w-[480px]">
-          <h1 className="text-center text-base font-bold text-gray-900 mb-8">
+      <div className="flex flex-1 items-center justify-center px-4 py-12">
+        <div className="w-full max-w-[480px]">
+          <h1 className="mb-8 text-center text-base font-bold text-gray-900">
             ログイン
           </h1>
 
-          <div className="bg-white shadow-sm border border-gray-200 p-8 md:p-12">
-            <div className="text-center mb-8">
+          <div className="border border-gray-200 bg-white p-8 shadow-sm md:p-12">
+            <div className="mb-8 text-center">
               <h2 className="text-xl font-normal tracking-wide text-gray-900">
                 coco career
               </h2>
             </div>
-            <button
-              className="bg-[#06C755] text-white h-[36px] w-[240px]
-             rounded-full flex items-center justify-center gap-2
-             transition-colors px-4 mx-auto text-[14px] font-bold"
-            >
-              <img
-                src="/line.png"
-                alt="Line Logo"
-                className="w-5 h-5"
-              />
+            <button className="mx-auto flex h-[36px] w-[240px] items-center justify-center gap-2 rounded-full bg-[#06C755] px-4 text-[14px] font-bold text-white transition-colors">
+              <img src="/line.png" alt="Line Logo" className="h-5 w-5" />
               LINEで登録・ログイン
             </button>
-
           </div>
           <div className="mt-8 text-center">
             <Link
               href=""
-              className="text-sm text-[#111958] inline-flex items-center gap-1 transition-colors"
+              className="inline-flex items-center gap-1 text-sm text-[#111958] transition-colors"
             >
               企業担当者はこちら
               <svg

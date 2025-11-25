@@ -13,7 +13,7 @@ export const additionalProfileSchema = z.object({
     .min(1, "性別は必須です")
     .refine(
       (v) => ["男性", "女性", "その他"].includes(v),
-      "性別の選択が正しくありません"
+      "性別の選択が正しくありません",
     ),
 });
 
