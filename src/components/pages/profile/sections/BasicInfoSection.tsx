@@ -30,18 +30,19 @@ export default function BasicInfoSection() {
             </label>
             <input
               type="text"
-              defaultValue="山田"
-              className="h-9 rounded border-[0.5px] border-[#111958] bg-white px-3 py-2 text-sm tracking-[1.4px] text-[#2D2D2D]"
+              placeholder="山田"
+              className="h-9 rounded border-[0.5px] border-[#111958] bg-white px-3 py-2 text-sm tracking-[1.4px] text-[#2D2D2D] placeholder:font-400 placeholder:text-[#2D2D2D]"
             />
           </div>
+
           <div className="flex w-[200px] flex-col gap-2">
             <label className="text-sm font-bold tracking-[0.56px] text-[#2D2D2D]">
               氏名（名）
             </label>
             <input
               type="text"
-              defaultValue="太郎"
-              className="h-9 rounded border-[0.5px] border-[#111958] bg-white px-3 py-2 text-sm tracking-[1.4px] text-[#2D2D2D]"
+              placeholder="太郎"
+              className="h-9 rounded border-[0.5px] border-[#111958] bg-white px-3 py-2 text-sm tracking-[1.4px] text-[#2D2D2D] placeholder:font-400 placeholder:text-[#2D2D2D]"
             />
           </div>
         </div>
@@ -53,8 +54,8 @@ export default function BasicInfoSection() {
             </label>
             <input
               type="text"
-              defaultValue="ヤマダ"
-              className="h-9 rounded border-[0.5px] border-[#111958] bg-white px-3 py-2 text-sm tracking-[1.4px] text-[#2D2D2D]"
+              placeholder="ヤマダ"
+              className="h-9 rounded border-[0.5px] border-[#111958] bg-white px-3 py-2 text-sm tracking-[1.4px] text-[#2D2D2D] placeholder:font-400 placeholder:text-[#2D2D2D]"
             />
           </div>
           <div className="flex w-[200px] flex-col gap-2">
@@ -63,8 +64,8 @@ export default function BasicInfoSection() {
             </label>
             <input
               type="text"
-              defaultValue="タロウ"
-              className="h-9 rounded border-[0.5px] border-[#111958] bg-white px-3 py-2 text-sm tracking-[1.4px] text-[#2D2D2D]"
+              placeholder="タロウ"
+              className="h-9 rounded border-[0.5px] border-[#111958] bg-white px-3 py-2 text-sm tracking-[1.4px] text-[#2D2D2D] placeholder:font-400 placeholder:text-[#2D2D2D]"
             />
           </div>
         </div>
@@ -88,25 +89,43 @@ export default function BasicInfoSection() {
               性別
             </label>
             <div className="flex justify-between">
-              <label className="flex items-center gap-1">
-                <div className="h-5 w-5 rounded-full border border-[#111958] bg-white"></div>
-                <span className="text-sm tracking-[0.56px] text-[#2D2D2D]">
-                  男性
-                </span>
+              {/* 男性 */}
+              <label className="flex items-center gap-1 cursor-pointer">
+                <input
+                  type="radio"
+                  name="gender"
+                  value="male"
+                  className="peer hidden"
+                />
+                <div className="h-5 w-5 rounded-full border border-[#111958] bg-white peer-checked:bg-[#111958]"></div>
+                <span className="text-sm tracking-[0.56px] text-[#2D2D2D]">男性</span>
               </label>
-              <label className="flex items-center gap-1">
-                <div className="h-5 w-5 rounded-full border border-[#111958] bg-white"></div>
-                <span className="text-sm tracking-[0.56px] text-[#2D2D2D]">
-                  女性
-                </span>
+
+              {/* 女性 */}
+              <label className="flex items-center gap-1 cursor-pointer">
+                <input
+                  type="radio"
+                  name="gender"
+                  value="female"
+                  className="peer hidden"
+                />
+                <div className="h-5 w-5 rounded-full border border-[#111958] bg-white peer-checked:bg-[#111958]"></div>
+                <span className="text-sm tracking-[0.56px] text-[#2D2D2D]">女性</span>
               </label>
-              <label className="flex items-center gap-1">
-                <div className="h-5 w-5 rounded-full border border-[#111958] bg-white"></div>
-                <span className="text-sm tracking-[0.56px] text-[#2D2D2D]">
-                  無回答
-                </span>
+
+              {/* 無回答 */}
+              <label className="flex items-center gap-1 cursor-pointer">
+                <input
+                  type="radio"
+                  name="gender"
+                  value="none"
+                  className="peer hidden"
+                />
+                <div className="h-5 w-5 rounded-full border border-[#111958] bg-white peer-checked:bg-[#111958]"></div>
+                <span className="text-sm tracking-[0.56px] text-[#2D2D2D]">無回答</span>
               </label>
             </div>
+
           </div>
         </div>
 
