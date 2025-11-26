@@ -55,7 +55,9 @@ const MobileFooter = () => {
       {/* Button Scroll Top */}
       <button
         onClick={scrollToTop}
-        className="fixed right-4 bottom-16 z-10 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-yellow-400 text-white shadow-lg transition-colors duration-300 hover:bg-yellow-500"
+        className="fixed right-4 bottom-[90px] z-[1000] flex h-10 w-10 cursor-pointer
+             items-center justify-center rounded-full bg-yellow-400
+             text-white shadow-lg transition-colors duration-300 hover:bg-yellow-500"
       >
         <ChevronUpIcon className="h-5 w-5" />
       </button>
