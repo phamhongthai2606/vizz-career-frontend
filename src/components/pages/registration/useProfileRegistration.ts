@@ -43,7 +43,7 @@ export const useProfileRegistration = () => {
   const watched = watch(requiredFields);
 
   const isFormValid = watched.every(
-    (v) => v !== "" && v !== undefined && v !== null
+    (v) => v !== "" && v !== undefined && v !== null,
   );
 
   const router = useRouter();
