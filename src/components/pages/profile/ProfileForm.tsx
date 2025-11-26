@@ -73,24 +73,6 @@ export default function ProfilePage() {
         </div>
       </div>
 
-      {/*<div*/}
-      {/*  className={`*/}
-      {/*    ${isFooterVisible ? "absolute" : "fixed"}*/}
-      {/*    left-0 right-0 z-50 */}
-      {/*    border-t border-[#D0D0D0] bg-white shadow-lg*/}
-      {/*  `}*/}
-      {/*  style={{*/}
-      {/*    bottom: isFooterVisible ? undefined : 0,*/}
-      {/*    top: isFooterVisible ? buttonTop ?? undefined : undefined,*/}
-      {/*  }}*/}
-      {/*>*/}
-      {/*  <div className="flex items-center justify-center py-4">*/}
-      {/*    <button className="h-10 w-60 rounded-full bg-[#111958] px-4 text-sm tracking-wider text-white transition hover:bg-[#1a2570]">*/}
-      {/*      保存する*/}
-      {/*    </button>*/}
-      {/*  </div>*/}
-      {/*</div>*/}
-
       <div className={` ${isFooterVisible ? "absolute" : "fixed"}
         left-0 right-0 z-50 
         border-t border-[#D0D0D0] bg-white shadow-lg
