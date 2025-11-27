@@ -8,6 +8,10 @@
   /* Màu chính */
   --color-blue-primary: #111958;
   --color-red-primary: #ff5252;
+
+  /* Màu phụ */
+  --color-gray-primary-light: #e5e7f5;
+  --color-natural-gray-200: #d0d0d0;
 }
 
 /* ------------------ Css chung -------------- */
