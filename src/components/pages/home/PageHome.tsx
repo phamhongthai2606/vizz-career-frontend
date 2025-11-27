@@ -553,6 +553,7 @@ export default function PageHome() {
               <div
                 key={job.id}
                 className="relative flex flex-1 flex-col border border-gray-900 shadow-[0_4px_8px_rgba(0,0,0,0.25)]"
+                style={{ width: "calc((100% - 2 * 40px) / 3)" }}
               >
                 {/* Shadow div job */}
                 <div className="pointer-events-none absolute top-[12px] left-[12px] z-0 h-full w-full bg-[#1119581A]"></div>
