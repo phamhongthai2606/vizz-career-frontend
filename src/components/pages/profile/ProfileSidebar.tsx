@@ -6,8 +6,8 @@ interface SidebarProps {
 }
 
 export default function ProfileSidebar({
- activeSection,
- onSectionChange,
+  activeSection,
+  onSectionChange,
 }: SidebarProps) {
   const sections = [
     { id: "basic", label: "基本情報" },

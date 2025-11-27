@@ -28,7 +28,7 @@ export default function EducationSection() {
                 <option value="">選択したください</option>
               </select>
               <svg
-                className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 stroke-gray-500"
+                className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 stroke-gray-500"
                 width="16"
                 height="16"
                 viewBox="0 0 24 24"
@@ -65,7 +65,7 @@ export default function EducationSection() {
                 <option value="">選択したください</option>
               </select>
               <svg
-                className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 stroke-gray-500"
+                className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 stroke-gray-500"
                 width="16"
                 height="16"
                 viewBox="0 0 24 24"

@@ -9,13 +9,15 @@ import { ja } from "date-fns/locale";
 // Convert full-width to half-width (safe, ESLint-friendly)
 const toHalfWidth = (str?: string | null): string => {
   if (!str) return "";
-  return str
-    // Full-width ASCII range: U+FF01 - U+FF5E
-    .replace(/[\uFF01-\uFF5E]/g, (c) =>
-      String.fromCharCode(c.charCodeAt(0) - 0xFEE0)
-    )
-    // Full-width space: U+3000
-    .replace(/\u3000/g, " ");
+  return (
+    str
+      // Full-width ASCII range: U+FF01 - U+FF5E
+      .replace(/[\uFF01-\uFF5E]/g, (c) =>
+        String.fromCharCode(c.charCodeAt(0) - 0xfee0),
+      )
+      // Full-width space: U+3000
+      .replace(/\u3000/g, " ")
+  );
 };
 
 // Normalize + validate when user finishes typing
@@ -23,7 +25,7 @@ const normalizeOnBlur = (
   rawInput: string,
   setBirthDate: (d: Date | null) => void,
   setInputValue: (v: string) => void,
-  setError: (v: string) => void
+  setError: (v: string) => void,
 ) => {
   const raw = toHalfWidth(rawInput).trim();
 
@@ -64,9 +66,7 @@ const normalizeOnBlur = (
   }
 
   // Invalid date
-  setError(
-    "正しい日付形式（YYYY-MM-DD または YYYYMMDD）で入力してください。"
-  );
+  setError("正しい日付形式（YYYY-MM-DD または YYYYMMDD）で入力してください。");
 };
 
 export default function BasicInfoSection() {
@@ -80,8 +80,7 @@ export default function BasicInfoSection() {
         基本情報
       </h2>
 
-      <div className="flex flex-col items-start gap-6 rounded bg-[#E5E7F5] p-6 w-[600px]">
-
+      <div className="flex w-[600px] flex-col items-start gap-6 rounded bg-[#E5E7F5] p-6">
         {/* --------------------- プロフィール画像 --------------------- */}
         <div className="flex w-[424px] flex-col gap-2">
           <label className="text-sm font-bold tracking-[0.56px] text-[#2D2D2D]">
@@ -92,7 +91,12 @@ export default function BasicInfoSection() {
             <div className="h-[120px] w-[120px] rounded border border-[#111958] bg-white" />
 
             <button className="flex items-center gap-2 text-sm tracking-[0.56px] text-[#111958]">
-              <svg width="24" height="24" viewBox="0 0 24 24" className="h-4 w-4">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                className="h-4 w-4"
+              >
                 <circle cx="12" cy="12" r="12" fill="#0A0F49" />
               </svg>
               <span>画像をアップロード</span>
@@ -163,9 +167,10 @@ export default function BasicInfoSection() {
             placeholderText="YYYY-MM-DD"
             value={inputValue}
             className={`h-9 w-full rounded border-[0.5px] px-3 py-2 text-sm tracking-[1.4px] ${
-              error ? "border-red-500 text-red-500" : "border-[#111958] text-[#111958]"
+              error
+                ? "border-red-500 text-red-500"
+                : "border-[#111958] text-[#111958]"
             } placeholder:text-[#B9B9B9]`}
-
             // Pick from calendar
             onChange={(date: Date | null) => {
               if (date) {
@@ -178,7 +183,6 @@ export default function BasicInfoSection() {
                 setInputValue("");
               }
             }}
-
             // User typing: block internal parsing to avoid auto "01", "02", ...
             onChangeRaw={(e) => {
               if (!e) return; // type guard for SyntheticEvent | undefined
@@ -189,10 +193,14 @@ export default function BasicInfoSection() {
               const half = toHalfWidth(raw);
               setInputValue(half);
             }}
-
             // Validate & normalize on blur
             onBlur={(e: FocusEvent<HTMLInputElement>) => {
-              normalizeOnBlur(e.target.value, setBirthDate, setInputValue, setError);
+              normalizeOnBlur(
+                e.target.value,
+                setBirthDate,
+                setInputValue,
+                setError,
+              );
             }}
           />
 
@@ -213,20 +221,35 @@ export default function BasicInfoSection() {
             <label className="text-sm font-bold tracking-[0.56px]">性別</label>
 
             <div className="flex justify-between">
-              <label className="flex items-center gap-1 cursor-pointer">
-                <input type="radio" name="gender" value="male" className="peer hidden" />
+              <label className="flex cursor-pointer items-center gap-1">
+                <input
+                  type="radio"
+                  name="gender"
+                  value="male"
+                  className="peer hidden"
+                />
                 <div className="h-5 w-5 rounded-full border border-[#111958] peer-checked:bg-[#111958]" />
                 <span>男性</span>
               </label>
 
-              <label className="flex items-center gap-1 cursor-pointer">
-                <input type="radio" name="gender" value="female" className="peer hidden" />
+              <label className="flex cursor-pointer items-center gap-1">
+                <input
+                  type="radio"
+                  name="gender"
+                  value="female"
+                  className="peer hidden"
+                />
                 <div className="h-5 w-5 rounded-full border border-[#111958] peer-checked:bg-[#111958]" />
                 <span>女性</span>
               </label>
 
-              <label className="flex items-center gap-1 cursor-pointer">
-                <input type="radio" name="gender" value="none" className="peer hidden" />
+              <label className="flex cursor-pointer items-center gap-1">
+                <input
+                  type="radio"
+                  name="gender"
+                  value="none"
+                  className="peer hidden"
+                />
                 <div className="h-5 w-5 rounded-full border border-[#111958] peer-checked:bg-[#111958]" />
                 <span>無回答</span>
               </label>
@@ -264,7 +287,6 @@ export default function BasicInfoSection() {
             />
           </div>
         </div>
-
       </div>
     </section>
   );
