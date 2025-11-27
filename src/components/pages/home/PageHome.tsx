@@ -213,128 +213,134 @@ export default function PageHome() {
                 className="relative flex flex-1 flex-col border border-gray-900 shadow-[0_4px_8px_rgba(0,0,0,0.25)]"
                 style={{ width: "calc((100% - 2 * 40px) / 3)" }}
               >
-                {/* Image + Like */}
-                <div className="relative h-[240px] w-full bg-[#FEEB94]">
-                  {job.image && (
-                    <Image
-                      src={job.image}
-                      alt={`Job ${job.id}`}
-                      fill
-                      className="object-cover"
-                    />
-                  )}
-                  <div
-                    className="absolute top-4 right-4 flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full border-[2px] border-gray-200 bg-white backdrop-blur-sm"
-                    onClick={() => toggleLike(job.id)}
-                  >
-                    {likedIds.includes(job.id) ? (
-                      <AiFillHeart className="text-3xl text-red-500" />
-                    ) : (
-                      <AiOutlineHeart className="text-3xl text-gray-400" />
-                    )}
-                  </div>
-                </div>
+                {/* Shadow div job */}
+                <div className="pointer-events-none absolute top-[12px] left-[12px] z-0 h-full w-full bg-[#1119581A]"></div>
 
-                {/* Content */}
-                <div className="space-y-3 px-5 py-6">
-                  <h2 className="line-clamp-2 min-h-[calc(2*1.405rem)] text-justify text-base font-bold tracking-[0.1em] break-words">
-                    {job.title}
-                  </h2>
-
-                  <div className="space-y-2 text-xs tracking-[0.1em]">
-                    {/* location */}
-                    <div className="flex items-center space-x-1">
+                {/* Nội dung job */}
+                <div className="relative z-1 bg-white">
+                  {/* Image + Like */}
+                  <div className="relative h-[240px] w-full bg-[#FEEB94]">
+                    {job.image && (
                       <Image
-                        src="/home/location.png"
-                        alt="location Icon"
-                        width={16}
-                        height={16}
+                        src={job.image}
+                        alt={`Job ${job.id}`}
+                        fill
+                        className="object-cover"
+                      />
+                    )}
+                    <div
+                      className="absolute top-4 right-4 flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full border-[2px] border-gray-200 bg-white backdrop-blur-sm"
+                      onClick={() => toggleLike(job.id)}
+                    >
+                      {likedIds.includes(job.id) ? (
+                        <AiFillHeart className="text-3xl text-red-500" />
+                      ) : (
+                        <AiOutlineHeart className="text-3xl text-gray-400" />
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="space-y-3 px-5 py-6">
+                    <h2 className="line-clamp-2 min-h-[calc(2*1.405rem)] text-justify text-base font-bold tracking-[0.1em] break-words">
+                      {job.title}
+                    </h2>
+
+                    <div className="space-y-2 text-xs tracking-[0.1em]">
+                      {/* location */}
+                      <div className="flex items-center space-x-1">
+                        <Image
+                          src="/home/location.png"
+                          alt="location Icon"
+                          width={16}
+                          height={16}
+                          className="object-contain"
+                        />
+                        <span>{job.location}</span>
+                      </div>
+
+                      <div className="flex space-x-2">
+                        {/* category */}
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-center space-x-1">
+                            <Image
+                              src="/home/briefcase.png"
+                              alt="Briefcase Icon"
+                              width={16}
+                              height={16}
+                              className="object-contain"
+                            />
+                            <span className="truncate overflow-hidden whitespace-nowrap">
+                              {job.category}
+                            </span>
+                          </div>
+                        </div>
+                        {/* position */}
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-center space-x-1">
+                            <Image
+                              src="/home/briefcase.png"
+                              alt="Briefcase Icon"
+                              width={16}
+                              height={16}
+                              className="object-contain"
+                            />
+                            <span className="max-w-full truncate overflow-hidden whitespace-nowrap">
+                              {job.position}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex space-x-2">
+                        {/* schedule */}
+                        <div className="flex-1">
+                          <div className="flex items-center space-x-1">
+                            <Image
+                              src="/home/briefcase.png"
+                              alt="Briefcase Icon"
+                              width={16}
+                              height={16}
+                              className="object-contain"
+                            />
+                            <span>{job.schedule}</span>
+                          </div>
+                        </div>
+                        {/* salary */}
+                        <div className="flex-1">
+                          <div className="flex items-center space-x-1">
+                            <Image
+                              src="/home/briefcase.png"
+                              alt="Briefcase Icon"
+                              width={16}
+                              height={16}
+                              className="object-contain"
+                            />
+                            <span>{job.salary}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center space-x-3">
+                      <Image
+                        src={job.companyLogo}
+                        alt="Company Logo"
+                        width={28}
+                        height={28}
                         className="object-contain"
                       />
-                      <span>{job.location}</span>
+                      <span className="text-sm font-semibold tracking-[0.1em] text-gray-500">
+                        {job.company}
+                      </span>
                     </div>
-
-                    <div className="flex space-x-2">
-                      {/* category */}
-                      <div className="min-w-0 flex-1">
-                        <div className="flex items-center space-x-1">
-                          <Image
-                            src="/home/briefcase.png"
-                            alt="Briefcase Icon"
-                            width={16}
-                            height={16}
-                            className="object-contain"
-                          />
-                          <span className="truncate overflow-hidden whitespace-nowrap">
-                            {job.category}
-                          </span>
-                        </div>
-                      </div>
-                      {/* position */}
-                      <div className="min-w-0 flex-1">
-                        <div className="flex items-center space-x-1">
-                          <Image
-                            src="/home/briefcase.png"
-                            alt="Briefcase Icon"
-                            width={16}
-                            height={16}
-                            className="object-contain"
-                          />
-                          <span className="max-w-full truncate overflow-hidden whitespace-nowrap">
-                            {job.position}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex space-x-2">
-                      {/* schedule */}
-                      <div className="flex-1">
-                        <div className="flex items-center space-x-1">
-                          <Image
-                            src="/home/briefcase.png"
-                            alt="Briefcase Icon"
-                            width={16}
-                            height={16}
-                            className="object-contain"
-                          />
-                          <span>{job.schedule}</span>
-                        </div>
-                      </div>
-                      {/* salary */}
-                      <div className="flex-1">
-                        <div className="flex items-center space-x-1">
-                          <Image
-                            src="/home/briefcase.png"
-                            alt="Briefcase Icon"
-                            width={16}
-                            height={16}
-                            className="object-contain"
-                          />
-                          <span>{job.salary}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-3">
-                    <Image
-                      src={job.companyLogo}
-                      alt="Company Logo"
-                      width={28}
-                      height={28}
-                      className="object-contain"
-                    />
-                    <span className="text-sm font-semibold tracking-[0.1em] text-gray-500">
-                      {job.company}
-                    </span>
                   </div>
                 </div>
               </div>
             ))}
 
             {/* Arrow floating button */}
-            <div className="bg-blue-primary absolute top-[141px] right-[-25px] flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full border-[2px] border-white text-white transition-all duration-300 hover:brightness-110">
+            <div className="bg-blue-primary absolute top-[141px] right-[-25px] z-2 flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full border-[2px] border-white text-white transition-all duration-300 hover:brightness-110">
               <ChevronRightIcon className="h-6 w-6 transition-all duration-300 hover:scale-110" />
             </div>
           </div>
@@ -360,128 +366,134 @@ export default function PageHome() {
                 className="relative flex flex-1 flex-col border border-gray-900 shadow-[0_4px_8px_rgba(0,0,0,0.25)]"
                 style={{ width: "calc((100% - 2 * 40px) / 3)" }}
               >
-                {/* Image + Like */}
-                <div className="relative h-[240px] w-full bg-[#FEEB94]">
-                  {job.image && (
-                    <Image
-                      src={job.image}
-                      alt={`Job ${job.id}`}
-                      fill
-                      className="object-cover"
-                    />
-                  )}
-                  <div
-                    className="absolute top-4 right-4 flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full border-[2px] border-gray-200 bg-white backdrop-blur-sm"
-                    onClick={() => toggleLike(job.id)}
-                  >
-                    {likedIds.includes(job.id) ? (
-                      <AiFillHeart className="text-3xl text-red-500" />
-                    ) : (
-                      <AiOutlineHeart className="text-3xl text-gray-400" />
-                    )}
-                  </div>
-                </div>
+                {/* Shadow div job */}
+                <div className="pointer-events-none absolute top-[12px] left-[12px] z-0 h-full w-full bg-[#1119581A]"></div>
 
-                {/* Content */}
-                <div className="space-y-3 px-5 py-6">
-                  <h2 className="line-clamp-2 min-h-[calc(2*1.405rem)] text-justify text-base font-bold tracking-[0.1em] break-words">
-                    {job.title}
-                  </h2>
-
-                  <div className="space-y-2 text-xs tracking-[0.1em]">
-                    {/* location */}
-                    <div className="flex items-center space-x-1">
+                {/* Nội dung job */}
+                <div className="relative z-1 bg-white">
+                  {/* Image + Like */}
+                  <div className="relative h-[240px] w-full bg-[#FEEB94]">
+                    {job.image && (
                       <Image
-                        src="/home/location.png"
-                        alt="location Icon"
-                        width={16}
-                        height={16}
+                        src={job.image}
+                        alt={`Job ${job.id}`}
+                        fill
+                        className="object-cover"
+                      />
+                    )}
+                    <div
+                      className="absolute top-4 right-4 flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full border-[2px] border-gray-200 bg-white backdrop-blur-sm"
+                      onClick={() => toggleLike(job.id)}
+                    >
+                      {likedIds.includes(job.id) ? (
+                        <AiFillHeart className="text-3xl text-red-500" />
+                      ) : (
+                        <AiOutlineHeart className="text-3xl text-gray-400" />
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="space-y-3 px-5 py-6">
+                    <h2 className="line-clamp-2 min-h-[calc(2*1.405rem)] text-justify text-base font-bold tracking-[0.1em] break-words">
+                      {job.title}
+                    </h2>
+
+                    <div className="space-y-2 text-xs tracking-[0.1em]">
+                      {/* location */}
+                      <div className="flex items-center space-x-1">
+                        <Image
+                          src="/home/location.png"
+                          alt="location Icon"
+                          width={16}
+                          height={16}
+                          className="object-contain"
+                        />
+                        <span>{job.location}</span>
+                      </div>
+
+                      <div className="flex space-x-2">
+                        {/* category */}
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-center space-x-1">
+                            <Image
+                              src="/home/briefcase.png"
+                              alt="Briefcase Icon"
+                              width={16}
+                              height={16}
+                              className="object-contain"
+                            />
+                            <span className="truncate overflow-hidden whitespace-nowrap">
+                              {job.category}
+                            </span>
+                          </div>
+                        </div>
+                        {/* position */}
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-center space-x-1">
+                            <Image
+                              src="/home/briefcase.png"
+                              alt="Briefcase Icon"
+                              width={16}
+                              height={16}
+                              className="object-contain"
+                            />
+                            <span className="max-w-full truncate overflow-hidden whitespace-nowrap">
+                              {job.position}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex space-x-2">
+                        {/* schedule */}
+                        <div className="flex-1">
+                          <div className="flex items-center space-x-1">
+                            <Image
+                              src="/home/briefcase.png"
+                              alt="Briefcase Icon"
+                              width={16}
+                              height={16}
+                              className="object-contain"
+                            />
+                            <span>{job.schedule}</span>
+                          </div>
+                        </div>
+                        {/* salary */}
+                        <div className="flex-1">
+                          <div className="flex items-center space-x-1">
+                            <Image
+                              src="/home/briefcase.png"
+                              alt="Briefcase Icon"
+                              width={16}
+                              height={16}
+                              className="object-contain"
+                            />
+                            <span>{job.salary}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center space-x-3">
+                      <Image
+                        src={job.companyLogo}
+                        alt="Company Logo"
+                        width={28}
+                        height={28}
                         className="object-contain"
                       />
-                      <span>{job.location}</span>
+                      <span className="text-sm font-semibold tracking-[0.1em] text-gray-500">
+                        {job.company}
+                      </span>
                     </div>
-
-                    <div className="flex space-x-2">
-                      {/* category */}
-                      <div className="min-w-0 flex-1">
-                        <div className="flex items-center space-x-1">
-                          <Image
-                            src="/home/briefcase.png"
-                            alt="Briefcase Icon"
-                            width={16}
-                            height={16}
-                            className="object-contain"
-                          />
-                          <span className="truncate overflow-hidden whitespace-nowrap">
-                            {job.category}
-                          </span>
-                        </div>
-                      </div>
-                      {/* position */}
-                      <div className="min-w-0 flex-1">
-                        <div className="flex items-center space-x-1">
-                          <Image
-                            src="/home/briefcase.png"
-                            alt="Briefcase Icon"
-                            width={16}
-                            height={16}
-                            className="object-contain"
-                          />
-                          <span className="max-w-full truncate overflow-hidden whitespace-nowrap">
-                            {job.position}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex space-x-2">
-                      {/* schedule */}
-                      <div className="flex-1">
-                        <div className="flex items-center space-x-1">
-                          <Image
-                            src="/home/briefcase.png"
-                            alt="Briefcase Icon"
-                            width={16}
-                            height={16}
-                            className="object-contain"
-                          />
-                          <span>{job.schedule}</span>
-                        </div>
-                      </div>
-                      {/* salary */}
-                      <div className="flex-1">
-                        <div className="flex items-center space-x-1">
-                          <Image
-                            src="/home/briefcase.png"
-                            alt="Briefcase Icon"
-                            width={16}
-                            height={16}
-                            className="object-contain"
-                          />
-                          <span>{job.salary}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-3">
-                    <Image
-                      src={job.companyLogo}
-                      alt="Company Logo"
-                      width={28}
-                      height={28}
-                      className="object-contain"
-                    />
-                    <span className="text-sm font-semibold tracking-[0.1em] text-gray-500">
-                      {job.company}
-                    </span>
                   </div>
                 </div>
               </div>
             ))}
 
             {/* Arrow floating button */}
-            <div className="bg-blue-primary absolute top-[141px] right-[-25px] flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full border-[2px] border-white text-white transition-all duration-300 hover:brightness-110">
+            <div className="bg-blue-primary absolute top-[141px] right-[-25px] z-2 flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full border-[2px] border-white text-white transition-all duration-300 hover:brightness-110">
               <ChevronRightIcon className="h-6 w-6 transition-all duration-300 hover:scale-110" />
             </div>
           </div>
@@ -542,128 +554,134 @@ export default function PageHome() {
                 key={job.id}
                 className="relative flex flex-1 flex-col border border-gray-900 shadow-[0_4px_8px_rgba(0,0,0,0.25)]"
               >
-                {/* Image + Like */}
-                <div className="relative h-[240px] w-full bg-[#FEEB94]">
-                  {job.image && (
-                    <Image
-                      src={job.image}
-                      alt={`Job ${job.id}`}
-                      fill
-                      className="object-cover"
-                    />
-                  )}
-                  <div
-                    className="absolute top-4 right-4 flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full border-[2px] border-gray-200 bg-white backdrop-blur-sm"
-                    onClick={() => toggleLike(job.id)}
-                  >
-                    {likedIds.includes(job.id) ? (
-                      <AiFillHeart className="text-3xl text-red-500" />
-                    ) : (
-                      <AiOutlineHeart className="text-3xl text-gray-400" />
-                    )}
-                  </div>
-                </div>
+                {/* Shadow div job */}
+                <div className="pointer-events-none absolute top-[12px] left-[12px] z-0 h-full w-full bg-[#1119581A]"></div>
 
-                {/* Content */}
-                <div className="space-y-3 px-5 py-6">
-                  <h2 className="line-clamp-2 min-h-[calc(2*1.405rem)] text-justify text-base font-bold tracking-[0.1em] break-words">
-                    {job.title}
-                  </h2>
-
-                  <div className="space-y-2 text-xs tracking-[0.1em]">
-                    {/* location */}
-                    <div className="flex items-center space-x-1">
+                {/* Nội dung job */}
+                <div className="relative z-1 bg-white">
+                  {/* Image + Like */}
+                  <div className="relative h-[240px] w-full bg-[#FEEB94]">
+                    {job.image && (
                       <Image
-                        src="/home/location.png"
-                        alt="location Icon"
-                        width={16}
-                        height={16}
+                        src={job.image}
+                        alt={`Job ${job.id}`}
+                        fill
+                        className="object-cover"
+                      />
+                    )}
+                    <div
+                      className="absolute top-4 right-4 flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full border-[2px] border-gray-200 bg-white backdrop-blur-sm"
+                      onClick={() => toggleLike(job.id)}
+                    >
+                      {likedIds.includes(job.id) ? (
+                        <AiFillHeart className="text-3xl text-red-500" />
+                      ) : (
+                        <AiOutlineHeart className="text-3xl text-gray-400" />
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="space-y-3 px-5 py-6">
+                    <h2 className="line-clamp-2 min-h-[calc(2*1.405rem)] text-justify text-base font-bold tracking-[0.1em] break-words">
+                      {job.title}
+                    </h2>
+
+                    <div className="space-y-2 text-xs tracking-[0.1em]">
+                      {/* location */}
+                      <div className="flex items-center space-x-1">
+                        <Image
+                          src="/home/location.png"
+                          alt="location Icon"
+                          width={16}
+                          height={16}
+                          className="object-contain"
+                        />
+                        <span>{job.location}</span>
+                      </div>
+
+                      <div className="flex space-x-2">
+                        {/* category */}
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-center space-x-1">
+                            <Image
+                              src="/home/briefcase.png"
+                              alt="Briefcase Icon"
+                              width={16}
+                              height={16}
+                              className="object-contain"
+                            />
+                            <span className="truncate overflow-hidden whitespace-nowrap">
+                              {job.category}
+                            </span>
+                          </div>
+                        </div>
+                        {/* position */}
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-center space-x-1">
+                            <Image
+                              src="/home/briefcase.png"
+                              alt="Briefcase Icon"
+                              width={16}
+                              height={16}
+                              className="object-contain"
+                            />
+                            <span className="max-w-full truncate overflow-hidden whitespace-nowrap">
+                              {job.position}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex space-x-2">
+                        {/* schedule */}
+                        <div className="flex-1">
+                          <div className="flex items-center space-x-1">
+                            <Image
+                              src="/home/briefcase.png"
+                              alt="Briefcase Icon"
+                              width={16}
+                              height={16}
+                              className="object-contain"
+                            />
+                            <span>{job.schedule}</span>
+                          </div>
+                        </div>
+                        {/* salary */}
+                        <div className="flex-1">
+                          <div className="flex items-center space-x-1">
+                            <Image
+                              src="/home/briefcase.png"
+                              alt="Briefcase Icon"
+                              width={16}
+                              height={16}
+                              className="object-contain"
+                            />
+                            <span>{job.salary}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center space-x-3">
+                      <Image
+                        src={job.companyLogo}
+                        alt="Company Logo"
+                        width={28}
+                        height={28}
                         className="object-contain"
                       />
-                      <span>{job.location}</span>
+                      <span className="text-sm font-semibold tracking-[0.1em] text-gray-500">
+                        {job.company}
+                      </span>
                     </div>
-
-                    <div className="flex space-x-2">
-                      {/* category */}
-                      <div className="min-w-0 flex-1">
-                        <div className="flex items-center space-x-1">
-                          <Image
-                            src="/home/briefcase.png"
-                            alt="Briefcase Icon"
-                            width={16}
-                            height={16}
-                            className="object-contain"
-                          />
-                          <span className="truncate overflow-hidden whitespace-nowrap">
-                            {job.category}
-                          </span>
-                        </div>
-                      </div>
-                      {/* position */}
-                      <div className="min-w-0 flex-1">
-                        <div className="flex items-center space-x-1">
-                          <Image
-                            src="/home/briefcase.png"
-                            alt="Briefcase Icon"
-                            width={16}
-                            height={16}
-                            className="object-contain"
-                          />
-                          <span className="max-w-full truncate overflow-hidden whitespace-nowrap">
-                            {job.position}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex space-x-2">
-                      {/* schedule */}
-                      <div className="flex-1">
-                        <div className="flex items-center space-x-1">
-                          <Image
-                            src="/home/briefcase.png"
-                            alt="Briefcase Icon"
-                            width={16}
-                            height={16}
-                            className="object-contain"
-                          />
-                          <span>{job.schedule}</span>
-                        </div>
-                      </div>
-                      {/* salary */}
-                      <div className="flex-1">
-                        <div className="flex items-center space-x-1">
-                          <Image
-                            src="/home/briefcase.png"
-                            alt="Briefcase Icon"
-                            width={16}
-                            height={16}
-                            className="object-contain"
-                          />
-                          <span>{job.salary}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-3">
-                    <Image
-                      src={job.companyLogo}
-                      alt="Company Logo"
-                      width={28}
-                      height={28}
-                      className="object-contain"
-                    />
-                    <span className="text-sm font-semibold tracking-[0.1em] text-gray-500">
-                      {job.company}
-                    </span>
                   </div>
                 </div>
               </div>
             ))}
 
             {/* Arrow floating button */}
-            <div className="bg-blue-primary absolute top-[141px] right-[-25px] flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full border-[2px] border-white text-white transition-all duration-300 hover:brightness-110">
+            <div className="bg-blue-primary absolute top-[141px] right-[-25px] z-2 flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full border-[2px] border-white text-white transition-all duration-300 hover:brightness-110">
               <ChevronRightIcon className="h-6 w-6 transition-all duration-300 hover:scale-110" />
             </div>
           </div>
