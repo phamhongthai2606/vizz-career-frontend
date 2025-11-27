@@ -6,6 +6,7 @@ import { usePageHome } from "@/components/pages/home/usePageHome";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { AppPrimaryButton } from "@/components/common/button/AppPrimaryButton";
 import Link from "next/link";
+import { ChevronRightIcon } from "@heroicons/react/24/solid";
 
 export default function PageHome() {
   const { repeatedLogos } = usePageHome();
@@ -21,26 +22,34 @@ export default function PageHome() {
       company: "株式会社BlueAI",
       companyLogo: "/home/logo-company.png",
       image: "/home/job/job1.png",
+      position: "営業、エンジニア、デザイナー、経理、マーケティング",
+      salary: "時給1,200円〜",
     },
     {
       id: 2,
-      title: "Job 2 title",
+      title:
+        "【東大早慶8割｜MBB等大手内定多数】未経験から裁量大きく自分の適正と希望に合った職種に挑戦！",
       location: "大阪市",
       category: "IT",
       schedule: "週5日",
       company: "株式会社Tech",
       companyLogo: "/home/logo-company.png",
-      image: "/home/job/job1.png",
+      image: "/home/job/job2.png",
+      position: "営業職",
+      salary: "時給1,200円〜",
     },
     {
-      id: 3,
-      title: "Job 3 title",
+      id: 4,
+      title:
+        "【東大早慶8割｜MBB等大手内定多数】未経験から裁量大きく自分の適正と希望に合った職種に挑戦！",
       location: "大阪市",
       category: "IT",
       schedule: "週5日",
       company: "株式会社Tech",
       companyLogo: "/home/logo-company.png",
-      image: "/home/job/job1.png",
+      image: "/home/job/job4.png",
+      position: "営業職",
+      salary: "時給1,200円〜",
     },
   ];
 
@@ -54,34 +63,41 @@ export default function PageHome() {
       schedule: "週1~3日以上",
       company: "株式会社BlueAI",
       companyLogo: "/home/logo-company.png",
-      image: "/home/job/job1.png",
+      image: "/home/job/job4.png",
+      position: "営業、エンジニア、デザイナー、経理、マーケティング",
+      salary: "時給1,200円〜",
     },
     {
       id: 5,
-      title: "Job 2 title",
+      title:
+        "【東大早慶8割｜MBB等大手内定多数】未経験から裁量大きく自分の適正と希望に合った職種に挑戦！",
       location: "大阪市",
       category: "IT",
       schedule: "週5日",
       company: "株式会社Tech",
       companyLogo: "/home/logo-company.png",
-      image: "/home/job/job1.png",
+      image: "/home/job/job5.png",
+      position: "営業職",
+      salary: "時給1,200円〜",
     },
     {
       id: 6,
-      title: "Job 3 title",
+      title:
+        "【東大早慶8割｜MBB等大手内定多数】未経験から裁量大きく自分の適正と希望に合った職種に挑戦！",
       location: "大阪市",
       category: "IT",
       schedule: "週5日",
       company: "株式会社Tech",
       companyLogo: "/home/logo-company.png",
-      image: "/home/job/job1.png",
+      image: "/home/job/job6.png",
+      position: "営業職",
+      salary: "時給1,200円〜",
     },
-    // thêm job khác
   ];
 
   const jobs = [
     {
-      id: 7,
+      id: 4,
       title:
         "【東大早慶8割｜MBB等大手内定多数】未経験から裁量大きく自分の適正と希望に合った職種に挑戦！",
       location: "東京23区",
@@ -89,29 +105,36 @@ export default function PageHome() {
       schedule: "週1~3日以上",
       company: "株式会社BlueAI",
       companyLogo: "/home/logo-company.png",
-      image: "/home/job/job1.png",
+      image: "/home/job/job4.png",
+      position: "営業、エンジニア、デザイナー、経理、マーケティング",
+      salary: "時給1,200円〜",
     },
     {
-      id: 8,
-      title: "Job 2 title",
+      id: 5,
+      title:
+        "【東大早慶8割｜MBB等大手内定多数】未経験から裁量大きく自分の適正と希望に合った職種に挑戦！",
       location: "大阪市",
       category: "IT",
       schedule: "週5日",
       company: "株式会社Tech",
       companyLogo: "/home/logo-company.png",
-      image: "/home/job/job1.png",
+      image: "/home/job/job5.png",
+      position: "営業職",
+      salary: "時給1,200円〜",
     },
     {
-      id: 9,
-      title: "Job 3 title",
+      id: 6,
+      title:
+        "【東大早慶8割｜MBB等大手内定多数】未経験から裁量大きく自分の適正と希望に合った職種に挑戦！",
       location: "大阪市",
       category: "IT",
       schedule: "週5日",
       company: "株式会社Tech",
       companyLogo: "/home/logo-company.png",
-      image: "/home/job/job1.png",
+      image: "/home/job/job6.png",
+      position: "営業職",
+      salary: "時給1,200円〜",
     },
-    // thêm job khác
   ];
 
   const [likedIds, setLikedIds] = useState<number[]>([]);
@@ -129,6 +152,8 @@ export default function PageHome() {
     { text: "##リモートワーク支援💻", href: "#" },
     { text: "##会社内間接喫煙対策中🚭", href: "#" },
     { text: "##会社部活あり🏃‍♀️", href: "#" },
+    { text: "###個性を重視した私服可👚👕", href: "#" },
+    { text: "###社員の成長を応援", href: "#" },
   ];
   // Hàm chia mảng thành các nhóm
   const chunkArray = <T,>(arr: T[], size: number): T[][] => {
@@ -181,22 +206,25 @@ export default function PageHome() {
           </h1>
 
           {/* Content section */}
-          <div className="mb-12 flex w-full justify-between gap-x-10">
+          <div className="relative mb-12 flex w-full flex-wrap justify-between gap-x-10">
             {jobsRecommend.map((job) => (
               <div
                 key={job.id}
                 className="relative flex flex-1 flex-col border border-gray-900 shadow-[0_4px_8px_rgba(0,0,0,0.25)]"
+                style={{ width: "calc((100% - 2 * 40px) / 3)" }}
               >
                 {/* Image + Like */}
-                <div className="relative h-[240px] w-full">
-                  <Image
-                    src={job.image}
-                    alt={`Job ${job.id}`}
-                    fill
-                    className="object-cover"
-                  />
+                <div className="relative h-[240px] w-full bg-[#FEEB94]">
+                  {job.image && (
+                    <Image
+                      src={job.image}
+                      alt={`Job ${job.id}`}
+                      fill
+                      className="object-cover"
+                    />
+                  )}
                   <div
-                    className="absolute top-4 right-4 flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full border-[2px] border-gray-200 bg-white/80 backdrop-blur-sm"
+                    className="absolute top-4 right-4 flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full border-[2px] border-gray-200 bg-white backdrop-blur-sm"
                     onClick={() => toggleLike(job.id)}
                   >
                     {likedIds.includes(job.id) ? (
@@ -214,6 +242,7 @@ export default function PageHome() {
                   </h2>
 
                   <div className="space-y-2 text-xs tracking-[0.1em]">
+                    {/* location */}
                     <div className="flex items-center space-x-1">
                       <Image
                         src="/home/location.png"
@@ -225,26 +254,66 @@ export default function PageHome() {
                       <span>{job.location}</span>
                     </div>
 
-                    <div className="flex items-center space-x-1">
-                      <Image
-                        src="/home/briefcase.png"
-                        alt="Briefcase Icon"
-                        width={16}
-                        height={16}
-                        className="object-contain"
-                      />
-                      <span>{job.category}</span>
+                    <div className="flex space-x-2">
+                      {/* category */}
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center space-x-1">
+                          <Image
+                            src="/home/briefcase.png"
+                            alt="Briefcase Icon"
+                            width={16}
+                            height={16}
+                            className="object-contain"
+                          />
+                          <span className="truncate overflow-hidden whitespace-nowrap">
+                            {job.category}
+                          </span>
+                        </div>
+                      </div>
+                      {/* position */}
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center space-x-1">
+                          <Image
+                            src="/home/briefcase.png"
+                            alt="Briefcase Icon"
+                            width={16}
+                            height={16}
+                            className="object-contain"
+                          />
+                          <span className="max-w-full truncate overflow-hidden whitespace-nowrap">
+                            {job.position}
+                          </span>
+                        </div>
+                      </div>
                     </div>
 
-                    <div className="flex items-center space-x-1">
-                      <Image
-                        src="/home/briefcase.png"
-                        alt="Briefcase Icon"
-                        width={16}
-                        height={16}
-                        className="object-contain"
-                      />
-                      <span>{job.schedule}</span>
+                    <div className="flex space-x-2">
+                      {/* schedule */}
+                      <div className="flex-1">
+                        <div className="flex items-center space-x-1">
+                          <Image
+                            src="/home/briefcase.png"
+                            alt="Briefcase Icon"
+                            width={16}
+                            height={16}
+                            className="object-contain"
+                          />
+                          <span>{job.schedule}</span>
+                        </div>
+                      </div>
+                      {/* salary */}
+                      <div className="flex-1">
+                        <div className="flex items-center space-x-1">
+                          <Image
+                            src="/home/briefcase.png"
+                            alt="Briefcase Icon"
+                            width={16}
+                            height={16}
+                            className="object-contain"
+                          />
+                          <span>{job.salary}</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
@@ -263,6 +332,11 @@ export default function PageHome() {
                 </div>
               </div>
             ))}
+
+            {/* Arrow floating button */}
+            <div className="bg-blue-primary absolute top-[141px] right-[-25px] flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full border-[2px] border-white text-white transition-all duration-300 hover:brightness-110">
+              <ChevronRightIcon className="h-6 w-6 transition-all duration-300 hover:scale-110" />
+            </div>
           </div>
 
           {/* Button section */}
@@ -279,22 +353,25 @@ export default function PageHome() {
           </h1>
 
           {/* Content section */}
-          <div className="mb-12 flex w-full justify-between gap-x-10">
+          <div className="relative mb-12 flex w-full flex-wrap justify-between gap-x-10">
             {jobs.map((job) => (
               <div
                 key={job.id}
-                className="flex flex-1 flex-col border border-gray-900 shadow-[0_4px_8px_rgba(0,0,0,0.25)]"
+                className="relative flex flex-1 flex-col border border-gray-900 shadow-[0_4px_8px_rgba(0,0,0,0.25)]"
+                style={{ width: "calc((100% - 2 * 40px) / 3)" }}
               >
                 {/* Image + Like */}
-                <div className="relative h-[240px] w-full">
-                  <Image
-                    src={job.image}
-                    alt={`Job ${job.id}`}
-                    fill
-                    className="object-cover"
-                  />
+                <div className="relative h-[240px] w-full bg-[#FEEB94]">
+                  {job.image && (
+                    <Image
+                      src={job.image}
+                      alt={`Job ${job.id}`}
+                      fill
+                      className="object-cover"
+                    />
+                  )}
                   <div
-                    className="absolute top-4 right-4 flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full border-[2px] border-gray-200 bg-white/80 backdrop-blur-sm"
+                    className="absolute top-4 right-4 flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full border-[2px] border-gray-200 bg-white backdrop-blur-sm"
                     onClick={() => toggleLike(job.id)}
                   >
                     {likedIds.includes(job.id) ? (
@@ -312,6 +389,7 @@ export default function PageHome() {
                   </h2>
 
                   <div className="space-y-2 text-xs tracking-[0.1em]">
+                    {/* location */}
                     <div className="flex items-center space-x-1">
                       <Image
                         src="/home/location.png"
@@ -323,26 +401,66 @@ export default function PageHome() {
                       <span>{job.location}</span>
                     </div>
 
-                    <div className="flex items-center space-x-1">
-                      <Image
-                        src="/home/briefcase.png"
-                        alt="Briefcase Icon"
-                        width={16}
-                        height={16}
-                        className="object-contain"
-                      />
-                      <span>{job.category}</span>
+                    <div className="flex space-x-2">
+                      {/* category */}
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center space-x-1">
+                          <Image
+                            src="/home/briefcase.png"
+                            alt="Briefcase Icon"
+                            width={16}
+                            height={16}
+                            className="object-contain"
+                          />
+                          <span className="truncate overflow-hidden whitespace-nowrap">
+                            {job.category}
+                          </span>
+                        </div>
+                      </div>
+                      {/* position */}
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center space-x-1">
+                          <Image
+                            src="/home/briefcase.png"
+                            alt="Briefcase Icon"
+                            width={16}
+                            height={16}
+                            className="object-contain"
+                          />
+                          <span className="max-w-full truncate overflow-hidden whitespace-nowrap">
+                            {job.position}
+                          </span>
+                        </div>
+                      </div>
                     </div>
 
-                    <div className="flex items-center space-x-1">
-                      <Image
-                        src="/home/briefcase.png"
-                        alt="Briefcase Icon"
-                        width={16}
-                        height={16}
-                        className="object-contain"
-                      />
-                      <span>{job.schedule}</span>
+                    <div className="flex space-x-2">
+                      {/* schedule */}
+                      <div className="flex-1">
+                        <div className="flex items-center space-x-1">
+                          <Image
+                            src="/home/briefcase.png"
+                            alt="Briefcase Icon"
+                            width={16}
+                            height={16}
+                            className="object-contain"
+                          />
+                          <span>{job.schedule}</span>
+                        </div>
+                      </div>
+                      {/* salary */}
+                      <div className="flex-1">
+                        <div className="flex items-center space-x-1">
+                          <Image
+                            src="/home/briefcase.png"
+                            alt="Briefcase Icon"
+                            width={16}
+                            height={16}
+                            className="object-contain"
+                          />
+                          <span>{job.salary}</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
@@ -361,6 +479,11 @@ export default function PageHome() {
                 </div>
               </div>
             ))}
+
+            {/* Arrow floating button */}
+            <div className="bg-blue-primary absolute top-[141px] right-[-25px] flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full border-[2px] border-white text-white transition-all duration-300 hover:brightness-110">
+              <ChevronRightIcon className="h-6 w-6 transition-all duration-300 hover:scale-110" />
+            </div>
           </div>
 
           {/* Button section */}
@@ -413,22 +536,24 @@ export default function PageHome() {
           </h1>
 
           {/* Content section */}
-          <div className="mb-12 flex w-full justify-between gap-x-10">
+          <div className="relative mb-12 flex w-full flex-wrap justify-between gap-x-10">
             {jobsFeatured.map((job) => (
               <div
                 key={job.id}
-                className="flex flex-1 flex-col border border-gray-900 shadow-[0_4px_8px_rgba(0,0,0,0.25)]"
+                className="relative flex flex-1 flex-col border border-gray-900 shadow-[0_4px_8px_rgba(0,0,0,0.25)]"
               >
                 {/* Image + Like */}
-                <div className="relative h-[240px] w-full">
-                  <Image
-                    src={job.image}
-                    alt={`Job ${job.id}`}
-                    fill
-                    className="object-cover"
-                  />
+                <div className="relative h-[240px] w-full bg-[#FEEB94]">
+                  {job.image && (
+                    <Image
+                      src={job.image}
+                      alt={`Job ${job.id}`}
+                      fill
+                      className="object-cover"
+                    />
+                  )}
                   <div
-                    className="absolute top-4 right-4 flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full border-[2px] border-gray-200 bg-white/80 backdrop-blur-sm"
+                    className="absolute top-4 right-4 flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full border-[2px] border-gray-200 bg-white backdrop-blur-sm"
                     onClick={() => toggleLike(job.id)}
                   >
                     {likedIds.includes(job.id) ? (
@@ -446,6 +571,7 @@ export default function PageHome() {
                   </h2>
 
                   <div className="space-y-2 text-xs tracking-[0.1em]">
+                    {/* location */}
                     <div className="flex items-center space-x-1">
                       <Image
                         src="/home/location.png"
@@ -457,26 +583,66 @@ export default function PageHome() {
                       <span>{job.location}</span>
                     </div>
 
-                    <div className="flex items-center space-x-1">
-                      <Image
-                        src="/home/briefcase.png"
-                        alt="Briefcase Icon"
-                        width={16}
-                        height={16}
-                        className="object-contain"
-                      />
-                      <span>{job.category}</span>
+                    <div className="flex space-x-2">
+                      {/* category */}
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center space-x-1">
+                          <Image
+                            src="/home/briefcase.png"
+                            alt="Briefcase Icon"
+                            width={16}
+                            height={16}
+                            className="object-contain"
+                          />
+                          <span className="truncate overflow-hidden whitespace-nowrap">
+                            {job.category}
+                          </span>
+                        </div>
+                      </div>
+                      {/* position */}
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center space-x-1">
+                          <Image
+                            src="/home/briefcase.png"
+                            alt="Briefcase Icon"
+                            width={16}
+                            height={16}
+                            className="object-contain"
+                          />
+                          <span className="max-w-full truncate overflow-hidden whitespace-nowrap">
+                            {job.position}
+                          </span>
+                        </div>
+                      </div>
                     </div>
 
-                    <div className="flex items-center space-x-1">
-                      <Image
-                        src="/home/briefcase.png"
-                        alt="Briefcase Icon"
-                        width={16}
-                        height={16}
-                        className="object-contain"
-                      />
-                      <span>{job.schedule}</span>
+                    <div className="flex space-x-2">
+                      {/* schedule */}
+                      <div className="flex-1">
+                        <div className="flex items-center space-x-1">
+                          <Image
+                            src="/home/briefcase.png"
+                            alt="Briefcase Icon"
+                            width={16}
+                            height={16}
+                            className="object-contain"
+                          />
+                          <span>{job.schedule}</span>
+                        </div>
+                      </div>
+                      {/* salary */}
+                      <div className="flex-1">
+                        <div className="flex items-center space-x-1">
+                          <Image
+                            src="/home/briefcase.png"
+                            alt="Briefcase Icon"
+                            width={16}
+                            height={16}
+                            className="object-contain"
+                          />
+                          <span>{job.salary}</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
@@ -495,6 +661,11 @@ export default function PageHome() {
                 </div>
               </div>
             ))}
+
+            {/* Arrow floating button */}
+            <div className="bg-blue-primary absolute top-[141px] right-[-25px] flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full border-[2px] border-white text-white transition-all duration-300 hover:brightness-110">
+              <ChevronRightIcon className="h-6 w-6 transition-all duration-300 hover:scale-110" />
+            </div>
           </div>
 
           {/* Button section */}

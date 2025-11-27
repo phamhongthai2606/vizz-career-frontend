@@ -23,7 +23,7 @@ export const AppPrimaryButton: FC<Props> = ({
 }) => {
   return (
     <button
-      className={`flex items-center justify-center rounded-full px-4 py-2 text-sm tracking-[0.04em] ${
+      className={`flex cursor-pointer items-center justify-center rounded-full px-4 py-2 text-sm tracking-[0.04em] ${
         statusValidate ? "" : "bg-gray-500"
       } ${className?.includes("bg-") ? className : `bg-red-primary text-white ${className || ""}`}`}
       onClick={statusValidate ? onClick : undefined}
