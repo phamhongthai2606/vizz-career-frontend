@@ -16,11 +16,11 @@ type DropdownProps = {
 };
 
 export default function Dropdown({
-                                   options,
-                                   value,
-                                   onChange,
-                                   width = 200,
-                                 }: DropdownProps) {
+  options,
+  value,
+  onChange,
+  width = 200,
+}: DropdownProps) {
   const [open, setOpen] = useState(false);
 
   // ref chính xác kiểu HTMLDivElement hoặc null
@@ -47,7 +47,7 @@ export default function Dropdown({
       {/* Selected button */}
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex justify-between items-center bg-white rounded-md px-4 text-sm cursor-pointer"
+        className="flex w-full cursor-pointer items-center justify-between rounded-md bg-white px-4 text-sm"
         style={{
           height: 40,
           border: "1px solid #1F2A70",
@@ -55,13 +55,13 @@ export default function Dropdown({
         type="button"
       >
         <span className="text-gray-800">{selected.label}</span>
-        <span className="text-gray-500 text-xs leading-none">▼</span>
+        <span className="text-xs leading-none text-gray-500">▼</span>
       </button>
 
       {/* Dropdown menu */}
       {open && (
         <div
-          className="absolute left-0 bg-white shadow-md z-20 py-1"
+          className="absolute left-0 z-20 bg-white py-1 shadow-md"
           style={{
             marginTop: 6,
             width,
@@ -76,7 +76,7 @@ export default function Dropdown({
                 onChange(item.value);
                 setOpen(false);
               }}
-              className="px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 text-gray-800"
+              className="cursor-pointer px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
             >
               {item.label}
             </div>

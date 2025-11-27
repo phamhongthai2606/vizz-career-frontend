@@ -7,8 +7,10 @@
 
   /* Màu chính */
   --color-blue-primary: #111958;
+  --color-red-primary: #ff5252;
 }
 
+/* ------------------ Css chung -------------- */
 body {
   background: var(--color-background-default);
   color: var(--color-txt-default);
@@ -19,4 +21,19 @@ body {
 
 .font-noto-jp {
   font-family: "Noto Sans JP", "Noto Sans", sans-serif !important;
+}
+
+/* --------------- Page Home ---------------- */
+/* Slider Logo */
+@keyframes slide-logos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide {
+  animation: slide-logos 100s linear infinite;
 }

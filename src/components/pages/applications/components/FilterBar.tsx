@@ -8,11 +8,11 @@ type FilterBarProps = {
 };
 
 export default function FilterBar({
-                                    status,
-                                    jobType,
-                                    onChangeStatus,
-                                    onChangeJobType,
-                                  }: FilterBarProps) {
+  status,
+  jobType,
+  onChangeStatus,
+  onChangeJobType,
+}: FilterBarProps) {
   const statusOptions: DropdownOption[] = [
     { label: "全て表示", value: "all" },
     { label: "応募済み", value: "applied" },
