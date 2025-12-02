@@ -1,10 +1,15 @@
 "use client";
-import React from "react";
+
+import React, { useState } from "react";
 import Image from "next/image";
+import SearchModal from "@/components/pages/home/SearchModal";
 
 export default function SearchHome() {
+  const [isOpen, setOpen] = useState(false);
+
   return (
     <React.Fragment>
+      <SearchModal open={isOpen} onClose={() => setOpen(false)} />
       <div className="h-full px-20 py-6">
         <div className="bg-blue-primary flex h-full items-center justify-center rounded-full px-[120px] py-6">
           <div className="flex items-center justify-center gap-x-6">
@@ -68,7 +73,17 @@ export default function SearchHome() {
               <input
                 type="text"
                 placeholder="フリーワード検索"
-                className="h-full w-full text-base tracking-[0.1em] text-[#0D1828] outline-none placeholder:text-[#0D1828]"
+                readOnly
+                onPointerDown={() => setOpen(true)}
+                onClick={() => setOpen(true)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") setOpen(true);
+                }}
+                aria-haspopup="dialog"
+                aria-expanded={isOpen}
+                role="button"
+                tabIndex={0}
+                className="pointer-events-auto z-10 h-full w-full cursor-pointer text-base tracking-[0.1em] text-[#0D1828] outline-none placeholder:text-[#0D1828]"
               />
             </div>
           </div>

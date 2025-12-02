@@ -10,20 +10,19 @@ const getGradeOptions = () => {
   const now = new Date();
   const currentYear = now.getFullYear();
   const currentMonth = now.getMonth() + 1;
-  
+
   // If currentMonth (1-3), then currentYear = currentYear
   // If currentMonth in (4-12) then currentYear  = currentYear + 1
-  const startYear = currentMonth >= 1 && currentMonth <= 3 
-    ? currentYear 
-    : currentYear + 1;
-  
+  const startYear =
+    currentMonth >= 1 && currentMonth <= 3 ? currentYear : currentYear + 1;
+
   const options = [];
   for (let i = 0; i < 5; i++) {
     const year = startYear + i;
     const shortYear = year % 100;
     options.push(`${shortYear}卒`);
   }
-  
+
   return options;
 };
 

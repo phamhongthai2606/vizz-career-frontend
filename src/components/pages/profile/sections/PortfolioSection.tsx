@@ -34,7 +34,13 @@ export default function PortfolioSection() {
           作品ファイル
         </label>
         <button className="flex items-center gap-2 text-sm tracking-[0.56px] text-[#111958]">
-          <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-4 w-4">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4"
+          >
             <circle cx="12" cy="12" r="12" fill="#0A0F49" />
           </svg>
           <span>作品ファイルをアップロードする</span>

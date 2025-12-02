@@ -16,7 +16,7 @@ export default function PreferencesSection() {
             <option value="">選択したください</option>
           </select>
           <svg
-            className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 stroke-gray-500"
+            className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 stroke-gray-500"
             width="16"
             height="16"
             viewBox="0 0 24 24"
@@ -29,7 +29,13 @@ export default function PreferencesSection() {
           </svg>
         </div>
         <button className="flex items-center gap-2 text-sm tracking-[0.56px] text-[#111958]">
-          <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-4 w-4">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4"
+          >
             <circle cx="12" cy="12" r="12" fill="#0A0F49" />
           </svg>
           <span>希望業界を追加する</span>
@@ -45,7 +51,7 @@ export default function PreferencesSection() {
             <option value="">選択したください</option>
           </select>
           <svg
-            className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 stroke-gray-500"
+            className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 stroke-gray-500"
             width="16"
             height="16"
             viewBox="0 0 24 24"
@@ -58,7 +64,13 @@ export default function PreferencesSection() {
           </svg>
         </div>
         <button className="flex items-center gap-2 text-sm tracking-[0.56px] text-[#111958]">
-          <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-4 w-4">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4"
+          >
             <circle cx="12" cy="12" r="12" fill="#0A0F49" />
           </svg>
           <span>希望職種を追加する</span>
@@ -74,7 +86,7 @@ export default function PreferencesSection() {
             <option value="">選択したください</option>
           </select>
           <svg
-            className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 stroke-gray-500"
+            className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 stroke-gray-500"
             width="16"
             height="16"
             viewBox="0 0 24 24"
@@ -87,7 +99,13 @@ export default function PreferencesSection() {
           </svg>
         </div>
         <button className="flex items-center gap-2 text-sm tracking-[0.56px] text-[#111958]">
-          <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-4 w-4">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4"
+          >
             <circle cx="12" cy="12" r="12" fill="#0A0F49" />
           </svg>
           <span>希望勤務地を追加する</span>
@@ -103,7 +121,7 @@ export default function PreferencesSection() {
             <option value="">選択したください</option>
           </select>
           <svg
-            className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 stroke-gray-500"
+            className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 stroke-gray-500"
             width="16"
             height="16"
             viewBox="0 0 24 24"
@@ -116,7 +134,13 @@ export default function PreferencesSection() {
           </svg>
         </div>
         <button className="flex items-center gap-2 text-sm tracking-[0.56px] text-[#111958]">
-          <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-4 w-4">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4"
+          >
             <circle cx="12" cy="12" r="12" fill="#0A0F49" />
           </svg>
           <span>希望勤務日数を追加する</span>

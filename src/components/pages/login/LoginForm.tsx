@@ -6,7 +6,7 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen w-full bg-[#f9fafb]">
       <div className="fixed top-4 right-4 z-50 max-w-[340px] md:top-6 md:right-8 md:max-w-sm">
-        <img src="/comment.png" alt="" />
+        <img src="/comment.jpg" alt="" />
       </div>
 
       <div className="flex flex-1 items-center justify-center px-4 py-12">
@@ -22,7 +22,7 @@ export default function LoginPage() {
               </h2>
             </div>
             <button className="mx-auto flex h-[36px] w-[240px] items-center justify-center gap-2 rounded-full bg-[#06C755] px-4 text-[14px] font-bold text-white transition-colors">
-              <img src="/line.png" alt="Line Logo" className="h-5 w-5" />
+              <img src="/line.svg" alt="Line Logo" className="h-5 w-5" />
               LINEで登録・ログイン
             </button>
           </div>

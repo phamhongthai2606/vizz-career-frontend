@@ -14,7 +14,6 @@ export default function ProfilePage() {
 
   return (
     <div className="relative flex min-h-screen flex-col bg-[#F9FAFB]">
-
       {/* MAIN CONTENT */}
       <div className="flex w-full flex-1 flex-col pl-[100px]">
         <div className="mx-auto w-full max-w-[1280px] px-4 py-10 md:px-[100px]">
@@ -43,7 +42,7 @@ export default function ProfilePage() {
       </div>
 
       {/* SAVE BUTTON WRAPPER (STICKY) */}
-      <div className="sticky bottom-0 left-0 right-0 z-50 border-t border-[#D0D0D0] bg-white shadow-lg">
+      <div className="sticky right-0 bottom-0 left-0 z-50 border-t border-[#D0D0D0] bg-white shadow-lg">
         <div className="flex items-center justify-center py-4">
           <button className="h-10 w-60 rounded-full bg-[#111958] px-4 text-sm tracking-wider text-white">
             保存する
