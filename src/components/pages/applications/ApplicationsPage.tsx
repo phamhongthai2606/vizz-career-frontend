@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import Link from "next/link";
-
+import Breadcrumb from "@/components/common/Breadcrumb";
 import FilterBar from "./components/FilterBar";
 import JobApplicationCard from "./components/JobApplicationCard";
 import Pagination from "./components/Pagination";
@@ -36,19 +35,9 @@ export default function ApplicationsPage() {
   return (
     <main className="min-h-screen bg-gray-50">
       {/* Breadcrumb */}
-      <div className="w-full border-b border-gray-200 bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-4 text-sm">
-          <nav className="flex items-center gap-2">
-            <Link href="/" className="text-gray-500 hover:text-gray-600">
-              求人TOP
-            </Link>
-            <span className="text-gray-400">›</span>
-            <span className="cursor-default font-semibold text-black">
-              応募管理
-            </span>
-          </nav>
-        </div>
-      </div>
+      <Breadcrumb
+        items={[{ label: "求人TOP", href: "/" }, { label: "応募管理" }]}
+      />
 
       {/* Page Content */}
       <div className="mx-auto max-w-6xl px-6 py-10">

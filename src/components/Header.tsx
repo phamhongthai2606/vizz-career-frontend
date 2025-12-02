@@ -82,7 +82,7 @@ export default function Header() {
             </Link>
 
             <Link
-              href="#"
+              href="/applications"
               className="flex flex-col items-center justify-between gap-1.5 border-r border-gray-300 pr-5"
             >
               <Image
@@ -98,7 +98,7 @@ export default function Header() {
             </Link>
 
             <Link
-              href="#"
+              href="/favourite"
               className="flex flex-col items-center justify-between gap-1.5"
             >
               <Image
