@@ -13,6 +13,11 @@ const MobileFooter = () => {
     "/registration",
     "/start",
     "/additional-profile",
+    "/business-login",
+    "/email-set-password",
+    "/email-sent",
+    "/account-created",
+    "/set-password",
   ].includes(pathCurrent);
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });

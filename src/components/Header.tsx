@@ -16,6 +16,11 @@ export default function Header() {
     "/registration",
     "/start",
     "/additional-profile",
+    "/business-login",
+    "/email-set-password",
+    "/email-sent",
+    "/account-created",
+    "/set-password",
   ];
   const isLoggedIn = !notLoginPages.includes(pathCurrent);
 
@@ -25,6 +30,11 @@ export default function Header() {
     "/registration",
     "/start",
     "/additional-profile",
+    "/business-login",
+    "/email-set-password",
+    "/email-sent",
+    "/account-created",
+    "/set-password",
   ].includes(pathCurrent);
 
   // Show Dropdown Menu
