@@ -14,7 +14,7 @@ const MobileFooter = () => {
     "/start",
     "/additional-profile",
     "/business-login",
-    "/email-set-password",
+    "/forgot-password",
     "/email-sent",
     "/account-created",
     "/set-password",

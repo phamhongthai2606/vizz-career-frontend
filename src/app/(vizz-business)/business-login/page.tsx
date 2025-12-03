@@ -1,4 +1,3 @@
-import React from "react";
 import BusinessLoginPage from "@/components/pages/business-login/BusinessLoginPage";
 import { Metadata } from "next";
 
