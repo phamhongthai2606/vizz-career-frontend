@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AppPrimaryLinkButton } from "@/components/common/button/AppPrimaryLinkButton";
@@ -34,6 +34,23 @@ export default function Header() {
   const handleCloseDropdown = () => {
     setIsOpenDropDownMenu(false);
   };
+
+  // Close dropdown menu when clicking out
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        handleCloseDropdown();
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   // Logout
   const handleLogout = async () => {
@@ -117,7 +134,7 @@ export default function Header() {
           {!isLoggedIn ? (
             <AppPrimaryLinkButton label="ログイン" href="/login" />
           ) : (
-            <>
+            <div ref={dropdownRef} className="relative">
               {/* Name User */}
               <div
                 onClick={handleToggleDropDownMenu}
@@ -151,7 +168,7 @@ export default function Header() {
                   </button>
                 </div>
               )}
-            </>
+            </div>
           )}
         </div>
       )}

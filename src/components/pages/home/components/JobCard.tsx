@@ -22,7 +22,7 @@ const JobCard: React.FC<JobCardProps> = ({ job, toggleLike, likedIds }) => {
   const isLiked = likedIds.includes(job.id);
 
   return (
-    <div className="ml:w-[320px] relative flex w-full flex-shrink-0 flex-col border border-gray-900 bg-white shadow-[0_4px_8px_rgba(0,0,0,0.25)]">
+    <div className="relative flex w-full flex-shrink-0 flex-col border border-gray-900 bg-white shadow-[0_4px_8px_rgba(0,0,0,0.25)] lg:w-[300px] xl:w-[320px]">
       {/* Shadow background */}
       <div className="pointer-events-none absolute top-[12px] left-[12px] z-0 h-full w-full bg-[#1119581A]"></div>
 
