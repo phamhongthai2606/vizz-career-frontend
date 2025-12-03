@@ -83,7 +83,7 @@ export default function Header() {
         <div className="relative flex items-center justify-center gap-x-10">
           <div className="flex justify-center gap-x-5">
             <Link
-              href="#"
+              href="/chat"
               className="flex flex-col items-center justify-between gap-1.5 border-r border-gray-300 pr-5"
             >
               <Image
@@ -145,7 +145,7 @@ export default function Header() {
 
               {/* Dropdown Menu */}
               {isOpenDropDownMenu && (
-                <div className="absolute top-full right-0 z-50 mt-[9px] rounded border border-gray-300 bg-white p-3">
+                <div className="absolute top-full right-0 z-50 mt-[20px] rounded border border-gray-300 bg-white p-3">
                   <Link
                     href="/profile"
                     className="hover:bg-gray-primary-light block h-[37px] w-[176px] px-3 py-2 text-sm tracking-[0.1em] text-black"
