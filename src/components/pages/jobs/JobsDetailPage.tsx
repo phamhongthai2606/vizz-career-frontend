@@ -253,7 +253,7 @@ export default function JobsDetailPage() {
           </div>
         </div>
       </div>
-      <div className="fixed bottom-0 left-0 z-50 flex h-[72px] w-full items-center justify-center gap-4 bg-white p-4">
+      <div className="sticky bottom-0 left-0 z-50 flex h-[72px] w-full items-center justify-center gap-4 border-t border-[#D0D0D0] bg-white p-4">
         <button
           onClick={() => job && toggleLike(job.id)}
           aria-pressed={isLiked}

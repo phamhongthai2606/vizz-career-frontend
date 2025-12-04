@@ -67,7 +67,7 @@ export default function JobCard({
         </div>
         <div className="flex items-center">
           <span className="w-[120px] flex-shrink-0">給与</span>
-          <span className="ml-[3px] flex-1 truncate">{job.salary}</span>
+          <span className="ml-[12px] flex-1 truncate">{job.salary}</span>
         </div>
       </div>
 
