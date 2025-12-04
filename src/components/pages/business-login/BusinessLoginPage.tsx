@@ -124,8 +124,8 @@ export default function BusinessLoginPage() {
           {/* Login Button */}
           <button
             type="submit"
-            disabled={!isValid}
-            className={`${isValid ? "bg-[#ff5252]" : "bg-[#ff5252]"} flex h-10 w-60 items-center justify-center gap-3 rounded-[34px] px-4 py-2 text-sm font-normal tracking-[1.4px] text-white transition-opacity disabled:opacity-50`}
+            disabled={!isValid || showError}
+            className={`${isValid && !showError ? "bg-[#ff5252]" : "bg-[#ff5252]"} flex h-10 w-60 items-center justify-center gap-3 rounded-[34px] px-4 py-2 text-sm font-normal tracking-[1.4px] text-white transition-opacity disabled:opacity-50`}
           >
             ログイン
           </button>

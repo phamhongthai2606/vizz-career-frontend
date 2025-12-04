@@ -20,7 +20,7 @@ export default function AccountCreatedPage() {
           </div>
 
           <Link
-            href="/registration"
+            href=""
             className="flex h-10 w-60 items-center justify-center gap-3 rounded-[34px] bg-[#ff5252] px-4 py-2 text-center text-sm font-normal tracking-[0.1em] text-white capitalize transition-opacity"
           >
             プロフィール登録へ

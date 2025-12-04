@@ -38,7 +38,7 @@ export default function EmailSentPage() {
                 メールが届いてない場合
               </p>
               <Link
-                href=""
+                href="/set-password"
                 className="flex items-center gap-2 text-sm font-medium tracking-[0.1em] text-[#111958] underline decoration-solid underline-offset-auto"
               >
                 メールを再送信
