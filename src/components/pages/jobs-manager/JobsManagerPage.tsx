@@ -21,6 +21,7 @@ export default function JobsManagerPage() {
 
   return (
     <section className="min-h-screen bg-gray-50 pb-20">
+
       {/* BREADCRUMB */}
       <Breadcrumb
         items={[
@@ -29,12 +30,18 @@ export default function JobsManagerPage() {
         ]}
       />
 
-      <div className="mx-auto max-w-6xl px-6 py-10">
-        {/* TITLE */}
-        <h1 className="mb-8 text-2xl font-bold tracking-wide">求人一覧</h1>
+      <div className="mx-auto max-w-6xl px-8 pt-10">
 
-        {/* FILTER BAR */}
-        <div className="mb-6 flex items-center gap-4">
+        {/* ====== TITLE + CREATE BUTTON in ONE ROW ====== */}
+        <div className="flex items-center justify-between mb-8">
+          <h1 className="text-2xl font-bold tracking-wide">求人一覧</h1>
+          <NewJobButton />  {/* đổi vị trí lên đây => cao ngang với tiêu đề */}
+        </div>
+
+        {/* ====== FILTER + COUNT under title ====== */}
+        <div className="flex items-center gap-4 mb-6">
+
+          {/* 2 selectbox (filter bar) */}
           <JobFilterBar
             sortOptions={sortOptions}
             statusOptions={statusOptions}
@@ -48,11 +55,6 @@ export default function JobsManagerPage() {
           <div className="text-base font-semibold text-[#D92D20]">
             {filteredJobs.length}件
           </div>
-        </div>
-
-        {/* NEW JOB BUTTON */}
-        <div className="mb-6 flex justify-end">
-          <NewJobButton />
         </div>
 
         {/* TABLE LIST */}

@@ -3,19 +3,29 @@
 import JobListRow from "./JobListRow";
 import type { Job } from "../useJobsManager";
 
-interface JobListTableProps {
-  jobs: Job[];
-}
-
-export default function JobListTable({ jobs }: JobListTableProps) {
+export default function JobListTable({ jobs }: { jobs: Job[] }) {
   return (
-    <div className="overflow-hidden rounded-md border border-[#B9B9B9] bg-white">
-      {/* HEADER */}
-      <div className="grid grid-cols-[3fr_1fr_1fr_1fr] border-b border-[#B9B9B9] bg-[#F2F4F7] px-6 py-3 text-sm font-medium text-[#344054] tracking-wide">
+    <div
+      className="
+        overflow-hidden w-full rounded-[8px]
+        bg-white border border-[#D0D5DD]
+        shadow-[0px_1px_2px_rgba(16,24,40,0.05)]
+      "
+    >
+      {/* TABLE HEADER */}
+      <div
+        className="
+        grid grid-cols-[5.1fr_1.45fr_1.45fr_1.2fr]
+        bg-[#F2F4F7]
+        px-6 py-[11px]
+        border-b border-[#D0D5DD]
+        text-[14px] font-semibold tracking-wide text-[#344054]
+      "
+      >
         <div>募集記事名</div>
         <div>求人状況</div>
         <div>更新日</div>
-        <div></div>
+        <div className="min-w-[61px]">操作</div>
       </div>
 
       {/* ROWS */}

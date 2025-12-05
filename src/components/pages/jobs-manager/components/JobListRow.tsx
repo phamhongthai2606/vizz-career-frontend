@@ -12,46 +12,44 @@ interface JobListRowProps {
 
 export default function JobListRow({ job }: JobListRowProps) {
   return (
-    <div className="grid grid-cols-[3fr_1fr_1fr_1fr] border-b border-[#E5E7EB] px-6 py-5 text-sm">
+    <div className="
+      grid grid-cols-[5.15fr_1.45fr_1.45fr_1.2fr]
+      border-b border-[#E4E7EC]
+      px-5 py-4 text-[14px]
+    ">
+
       {/* 募集記事名 */}
-      <div className="leading-relaxed text-[#344054]">
-        <Link
-          href="#"
-          className="text-[#175CD3] underline underline-offset-2 hover:text-[#0C4A9A]"
-        >
-          {job.title}
-        </Link>
-      </div>
+      <Link
+        href="#"
+        className="text-[#175CD3] font-[500] underline underline-offset-2 hover:text-[#0C4A9A]">
+        {job.title}
+      </Link>
 
       {/* 求人状況 */}
-      <div className="text-[#344054] font-medium">{job.status}</div>
+      <div className="font-[500] text-[#344054] whitespace-nowrap">
+        {job.status}
+      </div>
 
       {/* 更新日 */}
-      <div className="text-[#344054]">{job.updatedAt}</div>
+      <div className="text-[#344054] whitespace-nowrap">
+        {job.updatedAt}
+      </div>
 
       {/* 操作 */}
-      <div className="flex items-center gap-4 text-[#344054]">
+      <div className="flex items-center gap-5 min-w-[61px] whitespace-nowrap">
         {job.status === "下書き" ? (
           <>
-            {/* 編集する */}
-            <button className="flex items-center gap-1 hover:opacity-70">
-              <EditIcon />
-              <span className="text-sm">編集する</span>
+            <button className="flex items-center gap-[4px] hover:text-[#1D4ED8]">
+              <EditIcon /> 編集する
             </button>
-
-            {/* 削除 */}
             <button className="hover:opacity-70">
               <TrashIcon />
             </button>
           </>
         ) : (
-          <>
-            {/* 公開設定 */}
-            <button className="flex items-center gap-1 hover:opacity-70">
-              <PublishIcon />
-              <span className="text-sm">公開設定</span>
-            </button>
-          </>
+          <button className="flex items-center gap-[4px] hover:text-[#1D4ED8]">
+            <PublishIcon /> 公開設定
+          </button>
         )}
       </div>
     </div>
