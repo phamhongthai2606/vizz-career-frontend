@@ -1,55 +1,77 @@
 "use client";
 
 import Link from "next/link";
-import EditIcon from "./icons/EditIcon";
-import PublishIcon from "./icons/PublishIcon";
-import TrashIcon from "./icons/TrashIcon";
+import Image from "next/image";
 import type { Job } from "../useJobsManager";
 
 interface JobListRowProps {
   job: Job;
+  index: number; // 0-based
 }
 
-export default function JobListRow({ job }: JobListRowProps) {
-  return (
-    <div className="
-      grid grid-cols-[5.15fr_1.45fr_1.45fr_1.2fr]
-      border-b border-[#E4E7EC]
-      px-5 py-4 text-[14px]
-    ">
+export default function JobListRow({ job, index }: JobListRowProps) {
+  const isLinkRow = index === 1; // chỉ row thứ 2 (index 1) có link
 
+  return (
+    <div className="grid grid-cols-[3fr_1fr_1fr_1fr] border-b border-[#E5E7EB] px-6 py-5 text-sm text-[#344054]">
       {/* 募集記事名 */}
-      <Link
-        href="#"
-        className="text-[#175CD3] font-[500] underline underline-offset-2 hover:text-[#0C4A9A]">
-        {job.title}
-      </Link>
+      <div className="leading-relaxed">
+        {isLinkRow ? (
+          <Link
+            href="#"
+            className="text-[#175CD3] underline underline-offset-2 hover:text-[#0C4A9A]"
+          >
+            {job.title}
+          </Link>
+        ) : (
+          <span className="text-[#344054]">{job.title}</span>
+        )}
+      </div>
 
       {/* 求人状況 */}
-      <div className="font-[500] text-[#344054] whitespace-nowrap">
-        {job.status}
-      </div>
+      <div className="pl-10 font-medium text-[#344054]">{job.status}</div>
 
       {/* 更新日 */}
-      <div className="text-[#344054] whitespace-nowrap">
-        {job.updatedAt}
-      </div>
+      <div>{job.updatedAt}</div>
 
       {/* 操作 */}
-      <div className="flex items-center gap-5 min-w-[61px] whitespace-nowrap">
+      <div className="flex items-center gap-5 text-[#1D2939]">
         {job.status === "下書き" ? (
           <>
-            <button className="flex items-center gap-[4px] hover:text-[#1D4ED8]">
-              <EditIcon /> 編集する
+            {/* 編集する */}
+            <button className="flex items-center gap-1 hover:opacity-70">
+              <Image
+                src="/bussiness/jobs-manager/edit.svg"
+                alt="編集する"
+                width={16}
+                height={16}
+              />
+              <span>編集する</span>
             </button>
+
+            {/* 削除 */}
             <button className="hover:opacity-70">
-              <TrashIcon />
+              <Image
+                src="/bussiness/jobs-manager/delete.svg"
+                alt="削除"
+                width={16}
+                height={16}
+              />
             </button>
           </>
         ) : (
-          <button className="flex items-center gap-[4px] hover:text-[#1D4ED8]">
-            <PublishIcon /> 公開設定
-          </button>
+          <>
+            {/* 公開設定 */}
+            <button className="flex items-center gap-1 hover:opacity-70">
+              <Image
+                src="/bussiness/jobs-manager/setting.svg"
+                alt="公開設定"
+                width={16}
+                height={16}
+              />
+              <span>公開設定</span>
+            </button>
+          </>
         )}
       </div>
     </div>

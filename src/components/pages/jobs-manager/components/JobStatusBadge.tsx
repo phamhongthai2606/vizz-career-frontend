@@ -14,8 +14,7 @@ const styleMap: Record<JobStatus, string> = {
 };
 
 export default function JobStatusBadge({ status }: Props) {
-  const style =
-    styleMap[status] || "bg-gray-100 text-gray-600 border-gray-200";
+  const style = styleMap[status] || "bg-gray-100 text-gray-600 border-gray-200";
 
   return (
     <span

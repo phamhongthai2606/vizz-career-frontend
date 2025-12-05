@@ -9,7 +9,7 @@ import { useJobsManager } from "@/components/pages/jobs-manager/useJobsManager";
 
 export default function JobsManagerPage() {
   const {
-    jobs,
+    // giữ nguyên đúng những gì hook đang trả về
     filteredJobs,
     sortOptions,
     statusOptions,
@@ -20,28 +20,22 @@ export default function JobsManagerPage() {
   } = useJobsManager();
 
   return (
-    <section className="min-h-screen bg-gray-50 pb-20">
-
+    // giảm khoảng trắng dưới footer: pb-20 -> pb-10
+    <section className="min-h-[60vh] bg-gray-50 pb-4">
       {/* BREADCRUMB */}
       <Breadcrumb
-        items={[
-          { label: "TOP", href: "/" },
-          { label: "求人一覧" },
-        ]}
+        items={[{ label: "TOP", href: "/" }, { label: "求人一覧" }]}
       />
 
-      <div className="mx-auto max-w-6xl px-8 pt-10">
-
-        {/* ====== TITLE + CREATE BUTTON in ONE ROW ====== */}
-        <div className="flex items-center justify-between mb-8">
+      <div className="mx-auto max-w-6xl px-6 py-10">
+        {/* TITLE + 新規作成: nằm cùng 1 hàng */}
+        <div className="mb-6 flex items-center justify-between">
           <h1 className="text-2xl font-bold tracking-wide">求人一覧</h1>
-          <NewJobButton />  {/* đổi vị trí lên đây => cao ngang với tiêu đề */}
+          <NewJobButton />
         </div>
 
-        {/* ====== FILTER + COUNT under title ====== */}
-        <div className="flex items-center gap-4 mb-6">
-
-          {/* 2 selectbox (filter bar) */}
+        {/* FILTER BAR: 2 select box cách table xa hơn 1 chút */}
+        <div className="mb-8 flex items-center gap-4">
           <JobFilterBar
             sortOptions={sortOptions}
             statusOptions={statusOptions}

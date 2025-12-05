@@ -12,13 +12,13 @@ interface Props {
 }
 
 export default function JobFilterBar({
-                                       sortOptions,
-                                       statusOptions,
-                                       selectedSort,
-                                       selectedStatus,
-                                       onSortChange,
-                                       onStatusChange,
-                                     }: Props) {
+  sortOptions,
+  statusOptions,
+  selectedSort,
+  selectedStatus,
+  onSortChange,
+  onStatusChange,
+}: Props) {
   return (
     <div className="flex items-center gap-4">
       {/* STATUS FILTER */}

@@ -21,16 +21,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={` ${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased`}
       >
+        {/* Header cố định phía trên */}
         <Header />
-        {children}
+
+        {/* phần main tự giãn - nếu nội dung ít => đẩy footer xuống đáy
+           nếu nội dung nhiều => body dài, user scroll mới thấy footer */}
+        <main className="flex-1">{children}</main>
+
+        {/* Footer luôn ở cuối màn hình khi nội dung ngắn
+           & trôi ra khỏi màn hình khi nội dung dài = hiệu ứng bạn cần */}
         <Footer />
       </body>
     </html>
