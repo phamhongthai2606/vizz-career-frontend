@@ -15,7 +15,7 @@ export default function JobListTable({ jobs }: JobListTableProps) {
         <div>募集記事名</div>
         <div className="pl-10">求人状況</div>
         <div>更新日</div>
-        <div>操作</div>
+        <div></div>
       </div>
 
       {/* ROWS */}

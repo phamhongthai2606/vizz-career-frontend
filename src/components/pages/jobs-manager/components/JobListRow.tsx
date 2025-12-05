@@ -10,11 +10,12 @@ interface JobListRowProps {
 }
 
 export default function JobListRow({ job, index }: JobListRowProps) {
-  const isLinkRow = index === 1; // chỉ row thứ 2 (index 1) có link
+  const isLinkRow = index === 1; // Only row 2 has link
 
   return (
     <div className="grid grid-cols-[3fr_1fr_1fr_1fr] border-b border-[#E5E7EB] px-6 py-5 text-sm text-[#344054]">
-      {/* 募集記事名 */}
+
+      {/* Job Title */}
       <div className="leading-relaxed">
         {isLinkRow ? (
           <Link
@@ -28,14 +29,14 @@ export default function JobListRow({ job, index }: JobListRowProps) {
         )}
       </div>
 
-      {/* 求人状況 */}
+      {/* Status */}
       <div className="pl-10 font-medium text-[#344054]">{job.status}</div>
 
-      {/* 更新日 */}
+      {/* Updated Date */}
       <div>{job.updatedAt}</div>
 
-      {/* 操作 */}
-      <div className="flex items-center gap-5 text-[#1D2939]">
+      {/* Actions — updated color only */}
+      <div className="flex items-center gap-5 text-[#161870] font-medium">
         {job.status === "下書き" ? (
           <>
             {/* 編集する */}
@@ -46,7 +47,7 @@ export default function JobListRow({ job, index }: JobListRowProps) {
                 width={16}
                 height={16}
               />
-              <span>編集する</span>
+              <span className="text-[#161870]">編集する</span>
             </button>
 
             {/* 削除 */}
@@ -69,7 +70,7 @@ export default function JobListRow({ job, index }: JobListRowProps) {
                 width={16}
                 height={16}
               />
-              <span>公開設定</span>
+              <span className="text-[#161870]">公開設定</span>
             </button>
           </>
         )}
