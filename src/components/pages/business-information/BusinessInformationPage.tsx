@@ -6,32 +6,26 @@ import Link from "next/link";
 
 export default function BusinessInformationPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="relative flex min-h-screen flex-col bg-[#f9fafb]">
       <Breadcrumb
         items={[{ label: "TOP", href: "/" }, { label: "会社管理" }]}
         itemClassName="tracking-[0.1em]"
       />
 
-      {/*<div className="flex mx-auto max-w-6xl px-6 pb-0 pt-10 justify-between w-full">*/}
-      {/*  <h1 className="mb-6 text-2xl font-bold tracking-[0.04em]">*/}
-      {/*    会社管理*/}
-      {/*  </h1>*/}
-      {/*  <button className="flex items-center justify-center gap-2 rounded-full border border-red-primary bg-white px-6 py-2 w-[160px] h-[40px]">*/}
-      {/*    <Image*/}
-      {/*      src="/business/edit2.png"*/}
-      {/*      alt="Edit2 Icon"*/}
-      {/*      width={16}*/}
-      {/*      height={16}*/}
-      {/*      className="flex aspect-square h-4 w-4 items-center justify-center"*/}
-      {/*    />*/}
-      {/*    <span className="text-sm font-normal tracking-[0.14em] text-red-primary">*/}
-      {/*      編集する*/}
-      {/*    </span>*/}
-      {/*  </button>*/}
-      {/*</div>*/}
-
-      <div className="mx-auto max-w-6xl px-6 py-10">
-        <h1 className="mb-6 text-2xl font-bold">会社管理</h1>
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-10">
+        <h1 className="h-[36px] w-[99px] text-2xl font-bold">会社管理</h1>
+        <button className="border-red-primary flex h-[40px] w-[160px] items-center justify-center gap-2 rounded-full border bg-white px-6 py-2">
+          <Image
+            src="/business/edit2.png"
+            alt="Edit2 Icon"
+            width={16}
+            height={16}
+            className="flex aspect-square h-4 w-4 items-center justify-center"
+          />
+          <span className="text-red-primary text-sm font-normal tracking-[0.14em]">
+            編集する
+          </span>
+        </button>
       </div>
 
       <div className="mx-auto mb-[72px] flex w-full max-w-[1140px] flex-col items-start gap-10 px-4">
@@ -42,7 +36,7 @@ export default function BusinessInformationPage() {
             </div>
 
             <div className="flex flex-col items-center gap-6">
-              <div className="flex h-30 w-30 items-center justify-center rounded border border-[#111958]">
+              <div className="h-[120px] w-[120px] overflow-hidden rounded bg-white">
                 <Image
                   src="/business/logo.png"
                   alt="Default Logo"

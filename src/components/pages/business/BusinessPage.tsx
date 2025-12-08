@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function BusinessPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#f9fafb]">
       <Breadcrumb
         items={[{ label: "TOP", href: "/" }, { label: "会社管理" }]}
         itemClassName="tracking-[0.1em]"

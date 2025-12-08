@@ -30,7 +30,7 @@ export default function CreateBusinessPage() {
   const handleInputChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -52,16 +52,14 @@ export default function CreateBusinessPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="relative min-h-screen bg-[#f9fafb]">
       <Breadcrumb
         items={[{ label: "TOP", href: "/" }, { label: "会社管理" }]}
         itemClassName="tracking-[0.1em]"
       />
 
       <div className="mx-auto max-w-6xl px-6 py-10">
-        <h1 className="mb-6 text-2xl font-bold">
-          会社管理
-        </h1>
+        <h1 className="text-2xl font-bold">会社管理</h1>
       </div>
 
       <div className="mx-auto mb-[72px] flex w-full max-w-[1140px] flex-col items-start gap-10 px-4">
@@ -81,7 +79,11 @@ export default function CreateBusinessPage() {
                 ) : null}
               </div>
               <div className="flex items-start gap-3">
-                <button type="button" onClick={openLogoPicker} className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={openLogoPicker}
+                  className="flex items-center gap-2"
+                >
                   <Image
                     src="/business/upload.png"
                     alt="Upload Icon"
@@ -124,7 +126,7 @@ export default function CreateBusinessPage() {
               value={formData.companyName}
               onChange={handleInputChange}
               placeholder="会社名を入力してください"
-              className="flex h-9 flex-1 items-center gap-3 rounded border-[0.5px] border-[#111958] bg-white px-3 py-2 text-sm tracking-[0.1em] text-[#2D2D2D] placeholder:text-[#B9B9B9] focus:outline-none focus:ring-1 focus:ring-[#111958]"
+              className="flex h-9 flex-1 items-center gap-3 rounded border-[0.5px] border-[#111958] bg-white px-3 py-2 text-sm tracking-[0.1em] text-[#2D2D2D] placeholder:text-[#B9B9B9] focus:ring-1 focus:ring-[#111958] focus:outline-none"
             />
           </div>
 
@@ -154,7 +156,11 @@ export default function CreateBusinessPage() {
                 </div>
               </div>
               <div className="flex w-full items-start gap-3">
-                <button type="button" onClick={openCoverPicker} className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={openCoverPicker}
+                  className="flex items-center gap-2"
+                >
                   <Image
                     src="/business/upload.png"
                     alt="Export Icon"
@@ -198,7 +204,7 @@ export default function CreateBusinessPage() {
                 name="industry"
                 value={formData.industry}
                 onChange={handleInputChange}
-                className={`w-full appearance-none bg-transparent text-sm tracking-[0.1em] ${formData.industry ? 'text-[#2D2D2D]' : 'text-[#B9B9B9]'} placeholder:text-[#B9B9B9] focus:outline-none`}
+                className={`w-full appearance-none bg-transparent text-sm tracking-[0.1em] ${formData.industry ? "text-[#2D2D2D]" : "text-[#B9B9B9]"} placeholder:text-[#B9B9B9] focus:outline-none`}
               >
                 <option value="" disabled>
                   職種を選択してください
@@ -233,7 +239,7 @@ export default function CreateBusinessPage() {
                 name="companySize"
                 value={formData.companySize}
                 onChange={handleInputChange}
-                className={`w-full appearance-none bg-transparent text-sm tracking-[0.1em] ${formData.companySize ? 'text-[#2D2D2D]' : 'text-[#B9B9B9]'} placeholder:text-[#B9B9B9] focus:outline-none`}
+                className={`w-full appearance-none bg-transparent text-sm tracking-[0.1em] ${formData.companySize ? "text-[#2D2D2D]" : "text-[#B9B9B9]"} placeholder:text-[#B9B9B9] focus:outline-none`}
               >
                 <option value="" disabled>
                   企業規模を選択してください
@@ -273,13 +279,13 @@ export default function CreateBusinessPage() {
               onChange={handleInputChange}
               placeholder="企業の魅力・特徴を自由形式で記入してください"
               rows={3}
-              className="flex flex-1 items-start gap-3 rounded border-[0.5px] border-[#111958] bg-white px-3 py-2 text-sm tracking-[0.1em] text-[#2D2D2D] placeholder:text-[#B9B9B9] focus:outline-none focus:ring-1 focus:ring-[#111958] resize-none"
+              className="flex flex-1 resize-none items-start gap-3 rounded border-[0.5px] border-[#111958] bg-white px-3 py-2 text-sm tracking-[0.1em] text-[#2D2D2D] placeholder:text-[#B9B9B9] focus:ring-1 focus:ring-[#111958] focus:outline-none"
             />
           </div>
 
           <div className="flex w-full items-start gap-6">
             <div className="flex items-center">
-              <div className="w-40 text-sm font-bold tracking-[0.04em] text-[#2D2D2D] leading-normal">
+              <div className="w-40 text-sm leading-normal font-bold tracking-[0.04em] text-[#2D2D2D]">
                 インターン卒業生の
                 <br />
                 主な就職先
@@ -296,7 +302,7 @@ export default function CreateBusinessPage() {
               onChange={handleInputChange}
               placeholder="インターン卒業生の主な就職先を自由形式で記入してください"
               rows={3}
-              className="flex flex-1 items-start gap-3 rounded border-[0.5px] border-[#111958] bg-white px-3 py-2 text-sm tracking-[0.1em] text-[#2D2D2D] placeholder:text-[#B9B9B9] focus:outline-none focus:ring-1 focus:ring-[#111958] resize-none"
+              className="flex flex-1 resize-none items-start gap-3 rounded border-[0.5px] border-[#111958] bg-white px-3 py-2 text-sm tracking-[0.1em] text-[#2D2D2D] placeholder:text-[#B9B9B9] focus:ring-1 focus:ring-[#111958] focus:outline-none"
             />
           </div>
 
@@ -317,7 +323,7 @@ export default function CreateBusinessPage() {
               onChange={handleInputChange}
               placeholder="代表メッセージを自由形式で記入してください"
               rows={3}
-              className="flex flex-1 items-start gap-3 rounded border-[0.5px] border-[#111958] bg-white px-3 py-2 text-sm tracking-[0.1em] text-[#2D2D2D] placeholder:text-[#B9B9B9] focus:outline-none focus:ring-1 focus:ring-[#111958] resize-none"
+              className="flex flex-1 resize-none items-start gap-3 rounded border-[0.5px] border-[#111958] bg-white px-3 py-2 text-sm tracking-[0.1em] text-[#2D2D2D] placeholder:text-[#B9B9B9] focus:ring-1 focus:ring-[#111958] focus:outline-none"
             />
           </div>
 
@@ -340,7 +346,7 @@ export default function CreateBusinessPage() {
               value={formData.homepageUrl}
               onChange={handleInputChange}
               placeholder="ホームページURLを入力してください"
-              className="flex h-9 flex-1 items-center gap-3 rounded border-[0.5px] border-[#111958] bg-white px-3 py-2 text-sm tracking-[0.1em] text-[#2D2D2D] placeholder:text-[#B9B9B9] focus:outline-none focus:ring-1 focus:ring-[#111958]"
+              className="flex h-9 flex-1 items-center gap-3 rounded border-[0.5px] border-[#111958] bg-white px-3 py-2 text-sm tracking-[0.1em] text-[#2D2D2D] placeholder:text-[#B9B9B9] focus:ring-1 focus:ring-[#111958] focus:outline-none"
             />
           </div>
 
@@ -361,7 +367,7 @@ export default function CreateBusinessPage() {
               value={formData.companyAddress}
               onChange={handleInputChange}
               placeholder="会社住所を入力してください"
-              className="flex h-9 flex-1 items-center gap-3 rounded border-[0.5px] border-[#111958] bg-white px-3 py-2 text-sm tracking-[0.1em] text-[#2D2D2D] placeholder:text-[#B9B9B9] focus:outline-none focus:ring-1 focus:ring-[#111958]"
+              className="flex h-9 flex-1 items-center gap-3 rounded border-[0.5px] border-[#111958] bg-white px-3 py-2 text-sm tracking-[0.1em] text-[#2D2D2D] placeholder:text-[#B9B9B9] focus:ring-1 focus:ring-[#111958] focus:outline-none"
             />
           </div>
 
@@ -383,7 +389,7 @@ export default function CreateBusinessPage() {
                 value={formData.employeeCount}
                 onChange={handleInputChange}
                 placeholder="半額数字"
-                className="flex h-9 flex-1 items-center gap-3 rounded border-[0.5px] border-[#111958] bg-white px-3 py-2 text-sm tracking-[0.1em] text-[#2D2D2D] placeholder:text-[#B9B9B9] focus:outline-none focus:ring-1 focus:ring-[#111958]"
+                className="flex h-9 flex-1 items-center gap-3 rounded border-[0.5px] border-[#111958] bg-white px-3 py-2 text-sm tracking-[0.1em] text-[#2D2D2D] placeholder:text-[#B9B9B9] focus:ring-1 focus:ring-[#111958] focus:outline-none"
               />
               <div className="text-sm tracking-[0.04em] text-[#2D2D2D]">人</div>
             </div>
@@ -405,7 +411,7 @@ export default function CreateBusinessPage() {
                 name="establishmentYear"
                 value={formData.establishmentYear}
                 onChange={handleInputChange}
-                className={`w-full appearance-none bg-transparent text-sm tracking-[0.1em] ${formData.establishmentYear ? 'text-[#2D2D2D]' : 'text-[#B9B9B9]'} placeholder:text-[#B9B9B9] focus:outline-none`}
+                className={`w-full appearance-none bg-transparent text-sm tracking-[0.1em] ${formData.establishmentYear ? "text-[#2D2D2D]" : "text-[#B9B9B9]"} placeholder:text-[#B9B9B9] focus:outline-none`}
               >
                 <option value="" disabled>
                   設立年を選択してください
@@ -444,7 +450,7 @@ export default function CreateBusinessPage() {
                 value={formData.capital}
                 onChange={handleInputChange}
                 placeholder="半額数字"
-                className="flex h-9 flex-1 items-center gap-3 rounded border-[0.5px] border-[#111958] bg-white px-3 py-2 text-sm tracking-[0.1em] text-[#2D2D2D] placeholder:text-[#B9B9B9] focus:outline-none focus:ring-1 focus:ring-[#111958]"
+                className="flex h-9 flex-1 items-center gap-3 rounded border-[0.5px] border-[#111958] bg-white px-3 py-2 text-sm tracking-[0.1em] text-[#2D2D2D] placeholder:text-[#B9B9B9] focus:ring-1 focus:ring-[#111958] focus:outline-none"
               />
               <div className="text-sm tracking-[0.04em] text-[#2D2D2D]">円</div>
             </div>
