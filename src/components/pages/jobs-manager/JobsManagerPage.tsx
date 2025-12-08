@@ -22,10 +22,7 @@ export default function JobsManagerPage() {
     <>
       {/* Breadcrumb: full width, aligned with header */}
       <Breadcrumb
-        items={[
-          { label: "TOP", href: "/" },
-          { label: "求人一覧" },
-        ]}
+        items={[{ label: "TOP", href: "/" }, { label: "求人一覧" }]}
       />
 
       {/* Page content container */}
