@@ -9,9 +9,11 @@ interface BreadcrumbItem {
 
 interface BreadcrumbProps {
   items: BreadcrumbItem[];
+  // optional class applied to each breadcrumb item label (link or span)
+  itemClassName?: string;
 }
 
-export default function Breadcrumb({ items }: BreadcrumbProps) {
+export default function Breadcrumb({ items, itemClassName }: BreadcrumbProps) {
   return (
     <div className="w-full border-b border-gray-200 bg-white">
       <div className="mx-auto max-w-6xl px-6 py-4 text-sm">
@@ -21,12 +23,14 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
               {item.href ? (
                 <Link
                   href={item.href}
-                  className="text-gray-500 hover:text-gray-600"
+                  className={`text-gray-500 hover:text-gray-600 ${itemClassName ?? ""}`}
                 >
                   {item.label}
                 </Link>
               ) : (
-                <span className="cursor-default font-semibold text-black">
+                <span
+                  className={`cursor-default font-semibold text-black ${itemClassName ?? ""}`}
+                >
                   {item.label}
                 </span>
               )}
