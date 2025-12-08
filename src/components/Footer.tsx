@@ -14,6 +14,7 @@ const MobileFooter = () => {
     "/start",
     "/additional-profile",
   ].includes(pathCurrent);
+  const showButtonScrollTop = !pathCurrent?.startsWith("/chat");
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -53,12 +54,14 @@ const MobileFooter = () => {
       )}
 
       {/* Button Scroll Top */}
-      <button
-        onClick={scrollToTop}
-        className="fixed right-4 bottom-[90px] z-[1000] flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-yellow-400 text-white shadow-lg transition-colors duration-300 hover:bg-yellow-500"
-      >
-        <ChevronUpIcon className="h-5 w-5" />
-      </button>
+      {showButtonScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed right-4 bottom-[90px] z-[1000] flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-yellow-400 text-white shadow-lg transition-colors duration-300 hover:bg-yellow-500"
+        >
+          <ChevronUpIcon className="h-5 w-5" />
+        </button>
+      )}
     </React.Fragment>
   );
 };

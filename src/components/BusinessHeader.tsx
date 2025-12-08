@@ -6,25 +6,18 @@ import { AppPrimaryLinkButton } from "@/components/common/button/AppPrimaryLinkB
 import { usePathname } from "next/navigation";
 import { useRouter } from "next-nprogress-bar";
 
-export default function Header() {
+export default function BusinessHeader() {
   const router = useRouter();
   const pathCurrent = usePathname();
 
   // Login?
-  const notLoginPages = [
-    "/login",
-    "/registration",
-    "/start",
-    "/additional-profile",
-  ];
+  const notLoginPages = ["/business/login", "/business/registration"];
   const isLoggedIn = !notLoginPages.includes(pathCurrent);
 
   // Show Content Header?
   const isPrimaryHeader = ![
-    "/login",
-    "/registration",
-    "/start",
-    "/additional-profile",
+    "/business/login",
+    "/business/registration",
   ].includes(pathCurrent);
 
   // Show Dropdown Menu
@@ -54,7 +47,7 @@ export default function Header() {
 
   // Logout
   const handleLogout = async () => {
-    router.push("/login");
+    router.push("/business/login");
   };
 
   return (
@@ -65,46 +58,46 @@ export default function Header() {
           : "bg-[#f9fafb]"
       } flex justify-between px-12 py-5`}
     >
-      {/* Logo Header */}
-      <Link href="/" className="relative block cursor-pointer">
-        <Image
-          alt="Logo Coco Career Header"
-          src="/logo-header.png"
-          priority
-          sizes="121px"
-          width={121}
-          height={41}
-          className="object-cover"
-        />
-      </Link>
+      <div className="flex items-center justify-center gap-x-20">
+        {/* Logo Header */}
+        <Link href="/" className="relative block cursor-pointer">
+          <Image
+            alt="Logo Coco Career Header"
+            src="/logo-header.png"
+            priority
+            sizes="121px"
+            width={121}
+            height={41}
+            className="object-cover"
+          />
+        </Link>
 
-      {/* Content Header */}
-      {isPrimaryHeader && (
-        <div className="relative flex items-center justify-center gap-x-10">
+        {/* Content Header */}
+        {isPrimaryHeader && (
           <div className="flex justify-center gap-x-5">
             <Link
-              href="/chat"
+              href="#"
               className="flex flex-col items-center justify-between gap-1.5 border-r border-gray-300 pr-5"
             >
               <Image
-                alt="Mail Header"
-                src="/mail-header.png"
+                alt="Building Header"
+                src="/business/building.png"
                 priority
                 sizes="16px"
                 width={16}
                 height={16}
                 className="object-cover"
               />
-              <p className="text-sm tracking-[0.1em]">メッセージ</p>
+              <p className="text-sm tracking-[0.1em]">企業管理</p>
             </Link>
 
             <Link
-              href="/applications"
+              href="#"
               className="flex flex-col items-center justify-between gap-1.5 border-r border-gray-300 pr-5"
             >
               <Image
-                alt="Calendar Header"
-                src="/calendar-header.png"
+                alt="User Header"
+                src="/business/user.png"
                 priority
                 sizes="16px"
                 width={16}
@@ -115,50 +108,59 @@ export default function Header() {
             </Link>
 
             <Link
-              href="/favourite"
+              href="#"
               className="flex flex-col items-center justify-between gap-1.5"
             >
               <Image
-                alt="Heart Header"
-                src="/heart-header.png"
+                alt="Mail Header"
+                src="/business/mail.png"
                 priority
                 sizes="16px"
-                width={15.89}
-                height={13.45}
+                width={14.86}
+                height={14.86}
                 className="object-cover"
               />
-              <p className="text-sm tracking-[0.1em]">お気に入り</p>
+              <p className="text-sm tracking-[0.1em]">メッセージ</p>
             </Link>
           </div>
+        )}
+      </div>
 
-          {!isLoggedIn ? (
-            <AppPrimaryLinkButton label="ログイン" href="/login" />
-          ) : (
+      {/* Name Company + Name User + Dropdown menu user */}
+      <div className="relative flex items-center justify-center gap-x-10">
+        {!isLoggedIn ? (
+          <AppPrimaryLinkButton label="ログイン" href="/business/login" />
+        ) : (
+          <div className="max-w-[180px] space-y-1.5">
+            {/* Name Company */}
+            <div className="truncate text-sm font-semibold tracking-[0.1em] break-all text-black">
+              株式会社〇〇〇〇〇〇〇〇〇〇〇〇〇〇
+            </div>
             <div ref={dropdownRef} className="relative">
               {/* Name User */}
               <div
                 onClick={handleToggleDropDownMenu}
                 className={`cursor-pointer gap-2.5 text-sm font-semibold tracking-[0.1em] text-black`}
               >
-                {"山田\u3000太郎\u3000様"}
+                {"山田\u3000太郎"}
               </div>
 
               {/* Dropdown Menu */}
               {isOpenDropDownMenu && (
                 <div className="absolute top-full right-0 z-50 mt-[20px] rounded border border-gray-300 bg-white p-3">
                   <Link
-                    href="/profile"
+                    href="#"
                     className="hover:bg-gray-primary-light block h-[37px] w-[176px] px-3 py-2 text-sm tracking-[0.1em] text-black"
                     onClick={() => handleCloseDropdown()}
                   >
-                    プロフィール
+                    新規求人作成
                   </Link>
                   <Link
                     href="#"
                     className="hover:bg-gray-primary-light block h-[37px] w-[176px] border-b border-b-gray-300 px-3 py-2 text-sm tracking-[0.1em] text-black"
                     onClick={() => handleCloseDropdown()}
                   >
-                    アカウント設定
+                    求人一覧
                   </Link>
                   <button
                     onClick={handleLogout}
@@ -169,9 +171,9 @@ export default function Header() {
                 </div>
               )}
             </div>
-          )}
-        </div>
-      )}
+          </div>
+        )}
+      </div>
     </header>
   );
 }
