@@ -18,7 +18,7 @@ export default function UnpublishWarningModal({ open, onClose, onConfirm }: Unpu
         {/* header with icon */}
         <div className="flex items-center gap-3 mb-[18px]">
           <Image
-            src="/bussiness/jobs-manager/WarningIcon.svg"
+            src="/business/jobs-manager/WarningIcon.svg"
             alt="warning"
             width={22}
             height={22}

@@ -17,7 +17,7 @@ export default function DeleteDraftJobModal({ open, onClose, onConfirm }: Delete
 
         <div className="flex items-center gap-3 mb-[18px]">
           <Image
-            src="/bussiness/jobs-manager/DeleteIcon.svg"
+            src="/business/jobs-manager/DeleteIcon.svg"
             alt="delete warning"
             width={22}
             height={22}

@@ -19,7 +19,7 @@ export default function PublishSettingModal({ open, onClose, onConfirm }: Publis
         {/* Header row with image icon */}
         <div className="flex items-center gap-3 mb-[18px]">
           <Image
-            src="/bussiness/jobs-manager/InfoIcon.svg"
+            src="/business/jobs-manager/InfoIcon.svg"
             alt="info"
             width={22}
             height={22}

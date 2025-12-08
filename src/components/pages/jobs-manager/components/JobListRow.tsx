@@ -42,13 +42,13 @@ export default function JobListRow({ job, index }: JobListRowProps) {
           {job.status === "下書き" ? (
             <>
               <button className="flex items-center gap-1 hover:opacity-70">
-                <Image src="/bussiness/jobs-manager/edit.svg" alt="edit" width={16} height={16}/>
+                <Image src="/business/jobs-manager/edit.svg" alt="edit" width={16} height={16}/>
                 <span className="text-[#161870]">編集する</span>
               </button>
 
               {job.status === "下書き" && (
                 <button className="hover:opacity-70" onClick={() => setOpenDelete(true)}>
-                  <Image src="/bussiness/jobs-manager/delete.svg" alt="delete" width={16} height={16} />
+                  <Image src="/business/jobs-manager/delete.svg" alt="delete" width={16} height={16} />
                 </button>
               )}
             </>
@@ -61,7 +61,7 @@ export default function JobListRow({ job, index }: JobListRowProps) {
                   if (job.status === "公開停止中") setOpenPublish(true);
                 }}
               >
-                <Image src="/bussiness/jobs-manager/setting.svg" alt="公開設定" width={16} height={16}/>
+                <Image src="/business/jobs-manager/setting.svg" alt="公開設定" width={16} height={16}/>
                 <span className="text-[#161870]">公開設定</span>
               </button>
             </>
