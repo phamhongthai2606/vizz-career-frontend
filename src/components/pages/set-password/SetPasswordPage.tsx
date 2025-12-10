@@ -25,7 +25,7 @@ export default function SetPasswordPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!isValid) return;
-    router.push("/account-created");
+    router.push("business/account-created");
   };
 
   return (

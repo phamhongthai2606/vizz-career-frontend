@@ -1,8 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
 export default function EmailSentPage() {
+  const searchParams = useSearchParams();
+  const emailPrefill = searchParams.get("email") ?? "";
+
   return (
     <div className="flex min-h-screen flex-col items-center justify-start bg-[#f9fafb] px-4 pt-2.5">
       <div className="flex w-full max-w-[480px] flex-col items-center">
@@ -25,9 +29,10 @@ export default function EmailSentPage() {
                   <input
                     id="email"
                     type="email"
-                    placeholder="blueai@mail.com"
                     className="placeholder:font-400 flex h-9 items-center gap-3 self-stretch rounded border-[0.5px] border-[#5c62a6] bg-[#e5e7f5] px-3 py-2 placeholder:text-[#2D2D2D]"
                     required
+                    value={emailPrefill}
+                    readOnly
                   />
                 </div>
               </div>
@@ -38,7 +43,7 @@ export default function EmailSentPage() {
                 メールが届いてない場合
               </p>
               <Link
-                href="/set-password"
+                href="/business/forgot-password"
                 className="flex items-center gap-2 text-sm font-medium tracking-[0.1em] text-[#111958] underline decoration-solid underline-offset-auto"
               >
                 メールを再送信
@@ -48,7 +53,7 @@ export default function EmailSentPage() {
 
           <div className="flex flex-col items-center gap-6 self-stretch rounded-b border-x border-b border-[#b9b9b9] bg-white px-6 py-10">
             <Link
-              href="/business-login"
+              href="/business/business-login"
               className="flex items-center gap-2 text-sm font-medium tracking-[0.1em] text-[#111958] underline decoration-solid underline-offset-auto"
             >
               ログイン画面に戻る

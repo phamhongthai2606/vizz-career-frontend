@@ -114,7 +114,7 @@ export default function BusinessLoginPage() {
 
             {/* Forgot Password Link */}
             <Link
-              href="/forgot-password"
+              href="/business/forgot-password"
               className="text-sm font-medium tracking-[1.4px] text-[#111958] underline transition-opacity hover:opacity-80"
             >
               パスワードを忘れた方

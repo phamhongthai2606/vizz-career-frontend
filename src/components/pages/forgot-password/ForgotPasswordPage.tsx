@@ -15,7 +15,7 @@ export default function EmailSetPasswordPage() {
     if (!isValid) return;
 
     const encoded = encodeURIComponent(email.trim());
-    router.push(`/email-sent?email=${encoded}`);
+    router.push(`/business/email-sent?email=${encoded}`);
   };
 
   return (
